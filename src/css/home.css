@@ -1,0 +1,25 @@
+.home-container {
+  margin-top: 10px;
+}
+.home-card {
+  border: transparent;
+  padding: 10px;
+  display: flex;
+}
+.logoCampus {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  object-fit: cover;
+  justify-content: center;
+  align-self: center;
+  border: solid 1px rgb(180, 180, 180);
+}
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.tarjeta {
+  border: transparent;
+}
