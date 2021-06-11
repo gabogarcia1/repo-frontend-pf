@@ -51,6 +51,14 @@ body {
 .btn-warning {
   border-color: rgb(245, 203, 92);
 }
-.pContra {
-  margin-top: 3px;
+
+Link,
+a {
+  text-decoration: none;
+  color: rgb(245, 203, 92);
+}
+Link,
+a:hover {
+  text-decoration: none;
+  color: white;
 }

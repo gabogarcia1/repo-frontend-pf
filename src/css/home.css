@@ -2,9 +2,14 @@
   margin-top: 10px;
 }
 .home-card {
+  background: transparent;
   border: transparent;
   padding: 10px;
   display: flex;
+}
+.home-card p {
+  color: white;
+  font-size: 30px;
 }
 .logoCampus {
   width: 300px;
