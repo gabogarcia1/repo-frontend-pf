@@ -13,7 +13,7 @@
   object-fit: cover;
   justify-content: center;
   align-self: center;
-  border: solid 1px rgb(180, 180, 180);
+  /* border: solid 1px rgb(180, 180, 180); */
 }
 .info {
   display: flex;

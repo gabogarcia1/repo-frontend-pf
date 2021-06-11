@@ -2,6 +2,7 @@ import React from "react";
 // import { Link } from "react-router-dom";
 // import { Container } from "react-bootstrap";
 // import { Container, Row, Card, Col } from "react-bootstrap";
+import logo from "../images/toninHighSchoolLogo.png";
 
 import "../css/home.css";
 const Home = () => {
@@ -14,11 +15,7 @@ const Home = () => {
               <div className="card-body">
                 <p className="text-center"> Home </p>
               </div>
-              <img
-                className="logoCampus"
-                src="https://trello-attachments.s3.amazonaws.com/60baa0503098946317320254/600x360/3ee8a7711faa4e6b0c318b78a0b4ec8a/image.png"
-                alt="portada"
-              />
+              <img className="logoCampus" src={logo} alt="portada" />
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 // import LoginForm from "../components/LoginForm";
-
+import { Link } from "react-router-dom";
 import "../css/login.css";
 const Login = () => {
   return (
@@ -33,14 +33,21 @@ const Login = () => {
                 />
               </div>
 
-              <button type="submit" className="btn btn-info btn-block ingresar">
+              <button
+                type="submit"
+                className="btn btn-warning btn-block ingresar"
+              >
                 Iniciar
               </button>
-              <button className="btn btn-info btn-block registrarse">
-                <a href="registro.html">Registrarse</a>
-              </button>
+              <Link>
+                <p className="mt-4">Olvidaste tu contraseña?</p>
+              </Link>
+
+              {/* <button className="btn btn-info btn-block registrarse">
+                <a href="">Registrarse</a>
+              </button> */}
             </form>
-            <div className="mt-3"></div>
+            {/* <div className="mt-3"></div> */}
           </div>
         </div>
       </div>
