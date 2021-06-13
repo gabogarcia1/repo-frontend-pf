@@ -1,6 +1,5 @@
 import React from "react";
-// import AddCurso from "../components/AddCurso";
-// import TableCursos from "../components/TableCursos";
+import { ListGroup } from "react-bootstrap";
 
 const Admin = () => {
   return (
@@ -14,8 +13,11 @@ const Admin = () => {
         </div>
         <div className="row">
           <div className="col">
-            {/* <AddCurso setShow={setShow} show={show} />
-          {show === false && <TableCursos />} */}
+            <ListGroup horizontal>
+              <ListGroup.Item>Apellido y Nombre</ListGroup.Item>
+              <ListGroup.Item>Curso</ListGroup.Item>
+              <ListGroup.Item>N° de expediente</ListGroup.Item>
+            </ListGroup>
           </div>
         </div>
       </div>
