@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import jwt_decode from "jwt-decode"; //Paquete para decodificar el Token
+import jwt_decode from "jwt-decode";
 import AddCurso from "../components/AddCurso";
 import TableCursos from "../components/TableCursos";
 
