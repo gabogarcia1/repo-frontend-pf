@@ -1,5 +1,6 @@
 import React from "react";
 import { ListGroup } from "react-bootstrap";
+import "../css/listaDeAlumnos.css";
 
 const Admin = () => {
   return (
@@ -13,7 +14,7 @@ const Admin = () => {
         </div>
         <div className="row">
           <div className="col">
-            <ListGroup horizontal>
+            <ListGroup className="tablaDeAlumnos" horizontal>
               <ListGroup.Item>Apellido y Nombre</ListGroup.Item>
               <ListGroup.Item>Curso</ListGroup.Item>
               <ListGroup.Item>N° de expediente</ListGroup.Item>
