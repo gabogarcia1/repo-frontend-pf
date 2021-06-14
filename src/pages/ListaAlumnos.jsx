@@ -1,5 +1,6 @@
 import React from "react";
 import TablaAlumnos from "../components/TablaAlumnos";
+import { Button } from "react-bootstrap";
 import "../css/listaDeAlumnos.css";
 
 const Admin = () => {
@@ -9,7 +10,14 @@ const Admin = () => {
         <div className="row">
           <div className="col">
             <h1>Lista de Alumnos</h1>
-            <hr />
+          </div>
+          <div className="botones">
+            <Button variant="warning">
+              <i class="fas fa-trash"></i>
+            </Button>{" "}
+            <Button variant="danger">
+              <i class="fas fa-trash"></i>
+            </Button>{" "}
           </div>
         </div>
         <div className="row">
