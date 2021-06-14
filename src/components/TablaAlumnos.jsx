@@ -24,17 +24,14 @@ const TablaAlumnos = () => {
         <ListGroup.Item>Curso</ListGroup.Item>
         <ListGroup.Item>N° de Expediente</ListGroup.Item>
       </ListGroup>
-      
-      <ul>
-        {list.map((item) => (
-          <li key={item.id}>
-            <div>{item.firstname}</div>
-            <div>{item.curso}</div>
-            <div>{item.numerodeexpediente}</div>
-          </li>
-        ))}
-      </ul>
 
+      {list.map((item) => (
+        <ListGroup className="" key={item.id} horizontal>
+          <ListGroup.Item>{item.firstname}</ListGroup.Item>
+          <ListGroup.Item>{item.curso}</ListGroup.Item>
+          <ListGroup.Item>{item.numerodeexpediente}</ListGroup.Item>
+        </ListGroup>
+      ))}
     </>
   );
 };
