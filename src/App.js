@@ -11,14 +11,15 @@ import {
   FormGroup,
   ModalFooter,
 } from "reactstrap";
+import 'font-awesome/css/font-awesome.css'
 
 const data = [
-  { expediente: 1, nombreyapellido: "Tom Hiddleston ", curso: "3°Año" },
-  { expediente: 2, nombreyapellido: "Gugu Mbatha-Raw", curso: "1°Año" },
-  { expediente: 3, nombreyapellido: "Wunmi Mosaku", curso: "2°Año" },
-  { expediente: 4, nombreyapellido: "Eugene Cordero", curso: "1°Año" },
-  { expediente: 5, nombreyapellido: "Tara Strong", curso: "3°Año" },
-  { expediente: 6, nombreyapellido: "Owen Wilson", curso: "4°Año" },
+  { expediente: 1, nombreyapellido: "Tom Hiddleston ", curso: "3°Año", domicilio: "Ecuador 4036", contacto: "3816561429", dni: "44372965" },
+  { expediente: 2, nombreyapellido: "Gugu Mbatha-Raw", curso: "1°Año", domicilio: "Paraguay 4036", contacto: "3816561430", dni: "44372966" },
+  { expediente: 3, nombreyapellido: "Wunmi Mosaku", curso: "2°Año", domicilio: "Colombia 4036", contacto: "3816561431", dni: "44372967" },
+  { expediente: 4, nombreyapellido: "Eugene Cordero", curso: "1°Año", domicilio: "Peru 4036", contacto: "3816561432", dni: "44372968" },
+  { expediente: 5, nombreyapellido: "Tara Strong", curso: "3°Año", domicilio: "Chile 4036", contacto: "3816561433", dni: "44372969" },
+  { expediente: 6, nombreyapellido: "Owen Wilson", curso: "4°Año", domicilio: "Brasil 4036", contacto: "3816561434", dni: "44372970" },
 ];
 
 class App extends React.Component {
@@ -125,13 +126,14 @@ class App extends React.Component {
                   <td>{dato.nombreyapellido}</td>
                   <td>{dato.curso}</td>
                   <td>
+                    <Button color="info" onClick={() => this.mostrarModalActualizar(dato)}><i class="fa fa-search-plus" aria-hidden="true"></i></Button>{" "}
                     <Button
-                      color="primary"
+                      color="secondary "
                       onClick={() => this.mostrarModalActualizar(dato)}
                     >
-                      Editar
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     </Button>{" "}
-                    <Button color="danger" onClick={() => this.eliminar(dato)}>Dar de Baja</Button>
+                    <Button color="danger" onClick={() => this.eliminar(dato)}><i class="fa fa-trash" aria-hidden="true"></i></Button>
                   </td>
                 </tr>
               ))}
@@ -149,7 +151,6 @@ class App extends React.Component {
               <label>
                 N° de Expediente:
               </label>
-
               <input
                 className="form-control"
                 readOnly
@@ -183,6 +184,45 @@ class App extends React.Component {
                 value={this.state.form.curso}
               />
             </FormGroup>
+
+            <FormGroup>
+              <label>
+                Domicilio:
+              </label>
+              <input
+                className="form-control"
+                name="domicilio"
+                type="text"
+                onChange={this.handleChange}
+                value={this.state.form.domicilio}
+              />
+            </FormGroup>
+
+            <FormGroup>
+              <label>
+                Contacto:
+              </label>
+              <input
+                className="form-control"
+                name="contacto"
+                type="text"
+                onChange={this.handleChange}
+                value={this.state.form.contacto}
+              />
+            </FormGroup>
+
+            <FormGroup>
+              <label>
+                DNI:
+              </label>
+              <input
+                className="form-control"
+                name="dni"
+                type="text"
+                onChange={this.handleChange}
+                value={this.state.form.dni}
+              />
+            </FormGroup>
           </ModalBody>
 
           <ModalFooter>
@@ -199,6 +239,7 @@ class App extends React.Component {
               Cancelar
             </Button>
           </ModalFooter>
+
         </Modal>
 
 
@@ -241,6 +282,42 @@ class App extends React.Component {
               <input
                 className="form-control"
                 name="curso"
+                type="text"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+
+            <FormGroup>
+              <label>
+                Domicilio:
+              </label>
+              <input
+                className="form-control"
+                name="domicilio"
+                type="text"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+
+            <FormGroup>
+              <label>
+                Contacto:
+              </label>
+              <input
+                className="form-control"
+                name="contacto"
+                type="text"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+
+            <FormGroup>
+              <label>
+                DNI:
+              </label>
+              <input
+                className="form-control"
+                name="dni"
                 type="text"
                 onChange={this.handleChange}
               />
