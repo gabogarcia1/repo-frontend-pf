@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
-import ListaAlumnos from "./pages/ListaAlumnos";
+import ListaAlumnos from "./App";
 
 const App = () => {
   return (
