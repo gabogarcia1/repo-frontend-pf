@@ -1,18 +1,18 @@
 import React from "react";
 import { Col, Card, Button } from "react-bootstrap";
 import "../css/califications.css";
-import SubjetModal from "./SubjetModal";
-import handleShow from "./SubjetModal";
+// import SubjetModal from "./SubjetModal";
+// import handleShow from "./SubjetModal";
 
-const SubjetCard = (materia, variant) => {
+const SubjetCard = (variant, materia) => {
   return (
     <>
       <Col className="pb-3">
         <Card className="text-center p-auto m-auto cardMateria">
-          <Button variant={variant} onClick={handleShow}>
+          <Button variant={variant} className="w-100 h-100">
             {materia}
           </Button>
-          <SubjetModal />
+          {/* <SubjetModal /> */}
         </Card>
       </Col>
     </>
