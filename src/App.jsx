@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Layout from "./components/Layout";
+import Califications from "./pages/Califications";
+
 // import Layout from "./components/Layout";
 
 const App = () => {
@@ -13,6 +15,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/califications" component={Califications} />
           </Switch>
         </Layout>
       </Router>

@@ -1,0 +1,14 @@
+.buttonMateria {
+  color: black;
+  width: 100%;
+  height: 100%;
+}
+.buttonMateria:hover {
+  color: white;
+  transform: scale(1.05);
+}
+
+.cardMateria {
+  width: 60%;
+  height: 120px;
+}

@@ -21,7 +21,7 @@ const NavBar = () => {
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#link">Alumnos</Nav.Link>
             <Nav.Link href="#link">Profesores</Nav.Link>
-            <Nav.Link href="#link">Notas</Nav.Link>
+            <Nav.Link href="#califications">Notas</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
