@@ -128,7 +128,7 @@ class App extends React.Component {
                   <td>
                     <Button color="info" onClick={() => this.mostrarModalActualizar(dato)}><i class="fa fa-search-plus" aria-hidden="true"></i></Button>{" "}
                     <Button
-                      color="secondary "
+                      color="secondary npm "
                       onClick={() => this.mostrarModalActualizar(dato)}
                     >
                       <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
@@ -141,6 +141,7 @@ class App extends React.Component {
           </Table>
         </Container>
 
+{/* Modal de los datos de los Alumnos */}
         <Modal isOpen={this.state.modalActualizar}>
           <ModalHeader>
             <div><h3>Editar Registro</h3></div>
@@ -223,9 +224,11 @@ class App extends React.Component {
                 value={this.state.form.dni}
               />
             </FormGroup>
+
           </ModalBody>
 
           <ModalFooter>
+
             <Button
               color="primary"
               onClick={() => this.editar(this.state.form)}
@@ -238,13 +241,15 @@ class App extends React.Component {
             >
               Cancelar
             </Button>
+
           </ModalFooter>
 
         </Modal>
 
 
-
+{/* Modal para crear un nuevo Alumno */}
         <Modal isOpen={this.state.modalInsertar}>
+
           <ModalHeader>
             <div><h3>Nuevo Perfil de Alumno</h3></div>
           </ModalHeader>
@@ -322,9 +327,11 @@ class App extends React.Component {
                 onChange={this.handleChange}
               />
             </FormGroup>
+
           </ModalBody>
 
           <ModalFooter>
+
             <Button
               color="success"
               onClick={() => this.insertar()}
@@ -337,6 +344,7 @@ class App extends React.Component {
             >
               Cancelar
             </Button>
+
           </ModalFooter>
         </Modal>
       </>
