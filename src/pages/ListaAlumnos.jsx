@@ -10,6 +10,7 @@ const ListaAlumnos = () => {
       expediente: 1,
       nombreyapellido: "Tom Hiddleston ",
       curso: "3° Año",
+      estadodecuota: "Al Dia",
       domicilio: "Ecuador 4036",
       contacto: "3816561429",
       dni: "44372965",
@@ -18,6 +19,7 @@ const ListaAlumnos = () => {
       expediente: 2,
       nombreyapellido: "Gugu Mbatha-Raw",
       curso: "1° Año",
+      estadodecuota: "Al Dia",
       domicilio: "Paraguay 4036",
       contacto: "3816561430",
       dni: "44372966",
@@ -26,6 +28,7 @@ const ListaAlumnos = () => {
       expediente: 3,
       nombreyapellido: "Wunmi Mosaku",
       curso: "2° Año",
+      estadodecuota: "Retrasado",
       domicilio: "Colombia 4036",
       contacto: "3816561431",
       dni: "44372967",
@@ -34,6 +37,7 @@ const ListaAlumnos = () => {
       expediente: 4,
       nombreyapellido: "Eugene Cordero",
       curso: "1° Año",
+      estadodecuota: "Al Dia",
       domicilio: "Peru 4036",
       contacto: "3816561432",
       dni: "44372968",
@@ -42,6 +46,7 @@ const ListaAlumnos = () => {
       expediente: 5,
       nombreyapellido: "Tara Strong",
       curso: "3° Año",
+      estadodecuota: "Retrasado",
       domicilio: "Chile 4036",
       contacto: "3816561433",
       dni: "44372969",
@@ -50,11 +55,13 @@ const ListaAlumnos = () => {
       expediente: 6,
       nombreyapellido: "Owen Wilson",
       curso: "4° Año",
+      estadodecuota: "Al Dia",
       domicilio: "Brasil 4036",
       contacto: "3816561434",
       dni: "44372970",
     },
   ];
+
   // A la constate data le asigno el valor que tiene en dataAlumnos
   const [data, setData] = useState(dataAlumnos);
   // Controlan cuando se abren y cierran los modales, Esta en falso hasta que hagamos click y nos deje verlo
@@ -136,6 +143,7 @@ const ListaAlumnos = () => {
             <th>N° de Expediente</th>
             <th>Nombre y Apellio</th>
             <th>Curso</th>
+            <th>Estado de Cuota</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -145,6 +153,7 @@ const ListaAlumnos = () => {
               <td>{elemento.expediente}</td>
               <td>{elemento.nombreyapellido}</td>
               <td>{elemento.curso}</td>
+              <td>{elemento.estadodecuota}</td>
               <td>
                 <button
                   className="btn btn-info"
