@@ -168,7 +168,7 @@ const ListaAlumnos = () => {
               <td>{elemento.expediente}</td>
               <td>{elemento.nombreyapellido}</td>
               <td>{elemento.curso}</td>
-              <td>{elemento.estadodecuota}</td>
+              <td>{elemento.estadodecuota}<i class="fa fa-exclamation" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i></td>
               <td>
                 <button
                   className="btn btn-primary"
