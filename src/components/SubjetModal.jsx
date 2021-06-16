@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import React from "react";
 import { useState } from "react";
-import { Modal, Button, Accordion, Card } from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 import "../css/califications.css";
 import "font-awesome/css/font-awesome.css";
 import SubjetModalAccordion from "./SubjetModalAccordion";

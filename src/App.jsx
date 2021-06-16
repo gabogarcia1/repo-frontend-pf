@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Layout from "./components/Layout";
 import Califications from "./pages/Califications";
+import ListaAlumnos from "./pages/ListaAlumnos";
 
 const App = () => {
   return (
