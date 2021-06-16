@@ -41,6 +41,4 @@ function SubjetModal(datos) {
   );
 }
 
-render(<SubjetModal />);
-
 export default SubjetModal;
