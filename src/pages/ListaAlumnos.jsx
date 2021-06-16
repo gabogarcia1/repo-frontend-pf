@@ -3,7 +3,6 @@ import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 import "../css/listaDeAlumnos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
-import ModalEditar from "../components/ModalEditar";
 
 const ListaAlumnos = () => {
   const dataAlumnos = [
@@ -147,13 +146,13 @@ const ListaAlumnos = () => {
               <td>{elemento.nombreyapellido}</td>
               <td>{elemento.curso}</td>
               <td>
-                {/* <button
+                <button
                   className="btn btn-info"
                   aria-hidden="true"
                   onClick={() => seleccionarAlumno(elemento, "Editar")}
                 >
                   <i class="fa fa-info-circle"></i>
-                </button>{" "} */}
+                </button>{" "}
                 <button
                   className="btn btn-primary"
                   aria-hidden="true"
@@ -174,9 +173,7 @@ const ListaAlumnos = () => {
         </tbody>
       </table>
 
-      <ModalEditar />
-
-      {/* <Modal isOpen={modalEditar}>
+      <Modal isOpen={modalEditar}>
         <ModalHeader>
           <div>
             <h3>Editar Perfil de Alumno</h3>
@@ -358,7 +355,7 @@ const ListaAlumnos = () => {
             Cancelar
           </button>
         </ModalFooter>
-      </Modal> */}
+      </Modal>
     </div>
   );
 };

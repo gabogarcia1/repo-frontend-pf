@@ -8,17 +8,20 @@ import "../css/home.css";
 const Home = () => {
   return (
     <>
-<<<<<<< HEAD
-      <div className="container mt-5">
+      <div className="container home-container">
+
         <div className="row">
           <div className="col">
-            <h1>Home</h1>
-            <hr />
+            <div className="card home-card ">
+              <div className="card-body">
+                <p className="text-center"> Home </p>
+              </div>
+              <img className="logoCampus" src={logo} alt="portada" />
+            </div>
           </div>
         </div>
         <div className="row">
           <div className="col">
-=======
       <div className="container home-container">
         <div className="row">
           <div className="col">
@@ -30,7 +33,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      
 
       <div className="card container mt-4">
         <div className="card-body info">
@@ -59,10 +63,8 @@ const Home = () => {
                 delectus saepe error iusto iure!
               </p>
             </div>
->>>>>>> ec1bbcd64107082b71ab2848f94b4e8dda7c11a2
           </div>
         </div>
-      </div>
     </>
   );
 };
