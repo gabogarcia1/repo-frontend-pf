@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
+import React from "react";
+import { Modal, ModalBody, ModalFooter } from "reactstrap";
 import "../css/listaDeAlumnos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
