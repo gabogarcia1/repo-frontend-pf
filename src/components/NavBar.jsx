@@ -8,15 +8,17 @@ const NavBar = () => {
   return (
     <>
       <Navbar bg="light" expand="lg" className="nav-bar">
-        <Navbar.Brand href="#home">
-          <img
-            alt="Tonin High School"
-            src={logo}
-            width="50"
-            height="50"
-            className="d-inline-block align-top"
-          />{" "}
-        </Navbar.Brand>
+        <Link to="/">
+          <Navbar.Brand>
+            <img
+              alt="Tonin High School"
+              src={logo}
+              width="50"
+              height="50"
+              className="d-inline-block align-top"
+            />{" "}
+          </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
