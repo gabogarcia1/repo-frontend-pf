@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
 
 const ListaAlumnos = () => {
-  const dataPaises = [
+  const dataAlumnos = [
     {
       expediente: 1,
       nombreyapellido: "Tom Hiddleston ",
@@ -56,7 +56,7 @@ const ListaAlumnos = () => {
     },
   ];
 
-  const [data, setData] = useState(dataPaises);
+  const [data, setData] = useState(dataAlumnos);
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [modalInsertar, setModalInsertar] = useState(false);
@@ -67,7 +67,7 @@ const ListaAlumnos = () => {
     curso: "",
   });
 
-  const seleccionarPais = (elemento, caso) => {
+  const seleccionarAlumno = (elemento, caso) => {
     setAlumnoSeleccionado(elemento);
     caso === "Editar" ? setModalEditar(true) : setModalEliminar(true);
   };
@@ -82,10 +82,10 @@ const ListaAlumnos = () => {
 
   const editar = () => {
     var dataNueva = data;
-    dataNueva.map((pais) => {
-      if (pais.expediente === AlumnoSeleccionado.expediente) {
-        pais.curso = AlumnoSeleccionado.curso;
-        pais.nombreyapellido = AlumnoSeleccionado.nombreyapellido;
+    dataNueva.map((alumno) => {
+      if (alumno.expediente === AlumnoSeleccionado.expediente) {
+        alumno.curso = AlumnoSeleccionado.curso;
+        alumno.nombreyapellido = AlumnoSeleccionado.nombreyapellido;
       }
     });
     setData(dataNueva);
@@ -94,7 +94,9 @@ const ListaAlumnos = () => {
 
   const eliminar = () => {
     setData(
-      data.filter((pais) => pais.expediente !== AlumnoSeleccionado.expediente)
+      data.filter(
+        (alumno) => alumno.expediente !== AlumnoSeleccionado.expediente
+      )
     );
     setModalEliminar(false);
   };
@@ -146,21 +148,21 @@ const ListaAlumnos = () => {
                 <button
                   className="btn btn-info"
                   aria-hidden="true"
-                  onClick={() => seleccionarPais(elemento, "Editar")}
+                  onClick={() => seleccionarAlumno(elemento, "Editar")}
                 >
                   <i class="fa fa-info-circle"></i>
                 </button>{" "}
                 <button
                   className="btn btn-primary"
                   aria-hidden="true"
-                  onClick={() => seleccionarPais(elemento, "Editar")}
+                  onClick={() => seleccionarAlumno(elemento, "Editar")}
                 >
                   <i class="fa fa-pencil-square-o"></i>
                 </button>{" "}
                 <button
                   className="btn btn-danger"
                   aria-hidden="true"
-                  onClick={() => seleccionarPais(elemento, "Eliminar")}
+                  onClick={() => seleccionarAlumno(elemento, "Eliminar")}
                 >
                   <i class="fa fa-trash"></i>
                 </button>
