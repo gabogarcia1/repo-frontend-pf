@@ -1,34 +1,46 @@
-// import { render } from "@testing-library/react";
-// import React from "react";
-// import { useState } from "react";
-// import { Modal, Button } from "react-bootstrap";
-// import "../css/califications.css";
+import { render } from "@testing-library/react";
+import React from "react";
+import { useState } from "react";
+import { Modal, Button, Accordion, Card } from "react-bootstrap";
+import "../css/califications.css";
+import "font-awesome/css/font-awesome.css";
+import SubjetModalAccordion from "./SubjetModalAccordion";
 
-// function SubjetModal() {
-//   const [show, setShow] = useState(false);
-//   const handleClose = () => setShow(false);
-//   const handleShow = () => setShow(true);
+function SubjetModal(datos) {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-//   return (
-//     <>
-//       <Modal show={show} onHide={handleClose}>
-//         <Modal.Header closeButton>
-//           <Modal.Title>Modal heading</Modal.Title>
-//         </Modal.Header>
-//         <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-//         <Modal.Footer>
-//           <Button variant="secondary" onClick={handleClose}>
-//             Close
-//           </Button>
-//           <Button variant="primary" onClick={handleClose}>
-//             Save Changes
-//           </Button>
-//         </Modal.Footer>
-//       </Modal>
-//     </>
-//   );
-// }
+  return (
+    <>
+      <div className="w-100 h-100 d-flex contenedor-materia rounded">
+        <Button
+          onClick={handleShow}
+          className="w-100 h-100 buttonMateria rounded-0 d-flex justify-content-around p-0 align-items-center"
+        >
+          <div className="h5">{datos.materia}</div>
+          <div>
+            <i class={datos.class}></i>
+          </div>
+        </Button>
+      </div>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>{datos.materia}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <SubjetModalAccordion />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+}
 
-// render(<SubjetModal />);
+render(<SubjetModal />);
 
-// export default SubjetModal;
+export default SubjetModal;
