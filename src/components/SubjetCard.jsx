@@ -7,7 +7,7 @@ const SubjetCard = (datos) => {
   return (
     <>
       <Col className="pb-3 ">
-        <Card className="text-center p-auto m-auto cardMateria ">
+        <Card className="text-center p-auto m-auto cardMateria">
           <SubjetModal
             variant={datos.variant}
             materia={datos.materia}

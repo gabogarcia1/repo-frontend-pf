@@ -11,7 +11,7 @@ const SubjetModalAccordion = () => {
             Año 1
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="0">
-            <Card.Body>Nota final</Card.Body>
+            <Card.Body className="accordion-card">Nota final</Card.Body>
           </Accordion.Collapse>
         </Card>
 
@@ -20,7 +20,7 @@ const SubjetModalAccordion = () => {
             Año 2
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="1">
-            <Card.Body>Nota final</Card.Body>
+            <Card.Body className="accordion-card">Nota final</Card.Body>
           </Accordion.Collapse>
         </Card>
         <Card>
@@ -28,7 +28,7 @@ const SubjetModalAccordion = () => {
             Año 3
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="2">
-            <Card.Body>Nota final</Card.Body>
+            <Card.Body className="accordion-card">Nota final</Card.Body>
           </Accordion.Collapse>
         </Card>
         <Card>
@@ -36,7 +36,7 @@ const SubjetModalAccordion = () => {
             Año 4
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="3">
-            <Card.Body>Nota final</Card.Body>
+            <Card.Body className="accordion-card">Nota final</Card.Body>
           </Accordion.Collapse>
         </Card>
       </Accordion>

@@ -1,3 +1,22 @@
 .modal-icon {
-  font-size: 0.5em;
+  font-size: 0.3em;
+  padding-right: 5px;
+}
+.fa:hover {
+  color: rgb(245, 203, 92);
+  opacity: 100%;
+}
+
+.accordion-card:hover {
+  background-color: rgb(245, 203, 92);
+}
+
+.subjet-modal-btn {
+  background-color: rgb(245, 203, 92);
+  color: black;
+  border: 1px black solid;
+}
+
+.subjet-modal-btn:hover {
+  background-color: rgb(238, 191, 60);
 }

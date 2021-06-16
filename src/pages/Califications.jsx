@@ -1,31 +1,35 @@
-import ReactDOM from "react-dom";
 import React from "react";
-import Logo from "../images/toninHighSchoolLogo.png";
 import "../css/califications.css";
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Button, Card, Row } from "react-bootstrap";
 import SubjetCard from "../components/SubjetCard";
 import "font-awesome/css/font-awesome.css";
 import imgPerfil from "../images/imagen-perfil.jpg";
+import { Link } from "react-router-dom";
 
 const Califications = () => {
   return (
     <>
       <div>
-        <div className="container pt-5">
-          <Card className="card-datos-alumno">
+        <div className="container pt-5 d-flex justify-content-center">
+          <div className="pl-4 pr-1">
+            <Link to="/alumnos">
+              <Button className="back-btn">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+              </Button>
+            </Link>
+          </div>
+          <Card className="card-datos-alumno h-100 w-100">
             <Card.Body className="d-flex justify-content-between">
               <div>
-                <Card.Title className="pb-2">Datos del alumno</Card.Title>
+                <Card.Title className="">
+                  <h4>Datos del alumno</h4>
+                </Card.Title>
                 <hr />
                 <Card.Text>Nombre:</Card.Text>
                 <Card.Text>Apellido:</Card.Text>
               </div>
               <div>
-                <img
-                  src={imgPerfil}
-                  alt="a"
-                  className="perfil-img rounded-circle"
-                />
+                <img src={imgPerfil} alt="a" className="perfil-img rounded" />
               </div>
             </Card.Body>
           </Card>

@@ -26,7 +26,7 @@ function SubjetModal(datos) {
         </Button>
       </div>
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header closeButton style={{ backgroundColor: "#f8f9fa" }}>
           <Modal.Title className="h-100 w-100">
             <div className="d-flex justify-content-between align-items-center">
               <div className="">{datos.materia}</div>
@@ -41,7 +41,11 @@ function SubjetModal(datos) {
           <SubjetModalAccordion />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button
+            variant="secondary"
+            className="subjet-modal-btn"
+            onClick={handleClose}
+          >
             Cerrar
           </Button>
         </Modal.Footer>
