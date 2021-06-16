@@ -1,0 +1,69 @@
+body {
+  background: linear-gradient(
+    90deg,
+    rgba(207, 219, 213, 1) 0%,
+    rgba(175, 191, 183, 1) 74%,
+    rgba(149, 162, 156, 1) 100%
+  );
+  min-height: 100%;
+  background-size: cover;
+  object-fit: cover;
+}
+.box {
+  position: relative;
+  top: 100px;
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+  min-height: 370px;
+}
+.form {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.formulario {
+  background: rgb(
+    36,
+    36,
+    35
+  ); /*Agrega color del fondo sombreado al formukario*/
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0, 0.568); /*Sombras de la caja. El primer valor es el desplazamiento horizontal y el segundo valor es el desplazamiento vertical. El color de la sombra se heredará del color del texto*/
+  color: white; /* Agregar el color al título del formulario*/
+}
+.form-control {
+  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo al input*/
+  border-style: none;
+  transition: 00.5s ease-in;
+  outline: none;
+  box-shadow: none;
+}
+.form-control :focus {
+  background: none;
+  box-shadow: none;
+  outline: none;
+}
+.form-control::placeholder {
+  color: white;
+}
+.ingresar {
+  background-color: rgb(51, 53, 51);
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0, 0.568);
+  transition: 0.5s ease-in;
+}
+.btn-warning {
+  border-color: rgb(245, 203, 92);
+}
+
+Link,
+a {
+  text-decoration: none;
+  color: rgb(245, 203, 92);
+}
+Link,
+a:hover {
+  text-decoration: none;
+  color: white;
+}
