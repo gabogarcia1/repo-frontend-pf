@@ -64,22 +64,30 @@ const ListaAlumnos = () => {
 
   // A la constate data le asigno el valor que tiene en dataAlumnos
   const [data, setData] = useState(dataAlumnos);
-  // Controlan cuando se abren y cierran los modales, Esta en falso hasta que hagamos click y nos deje verlo
+
+  // Controlan cuando se abren y cierran los modales, Esta en falso para que este cerrado hasta que no se lo diga yo
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [modalInsertar, setModalInsertar] = useState(false);
 
+  // Le damos un estado al Alumno seleccionado
   const [AlumnoSeleccionado, setAlumnoSeleccionado] = useState({
     expediente: "",
     nombreyapellido: "",
     curso: "",
+    estadodecuota: "",
+    domicilio: "",
+    contacto: "",
+    dni: "",
   });
 
+  // Le indico que modal tiene que abrir, ya sea editar o dar de baja
   const seleccionarAlumno = (elemento, caso) => {
     setAlumnoSeleccionado(elemento);
     caso === "Editar" ? setModalEditar(true) : setModalEliminar(true);
   };
 
+  // Con esto guardo lo que el moderador esta escribiendo en los inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
     setAlumnoSeleccionado((prevState) => ({
@@ -88,18 +96,23 @@ const ListaAlumnos = () => {
     }));
   };
 
+  //Edita los datos puestos por el Mod y refresca los datos del Modal
   const editar = () => {
     var dataNueva = data;
     dataNueva.map((alumno) => {
       if (alumno.expediente === AlumnoSeleccionado.expediente) {
         alumno.curso = AlumnoSeleccionado.curso;
         alumno.nombreyapellido = AlumnoSeleccionado.nombreyapellido;
+        alumno.domicilio = AlumnoSeleccionado.domicilio;
+        alumno.contacto = AlumnoSeleccionado.contacto;
+        alumno.dni = AlumnoSeleccionado.dni;
       }
     });
     setData(dataNueva);
     setModalEditar(false);
   };
 
+  //Elimina el Alumno
   const eliminar = () => {
     setData(
       data.filter(
@@ -114,6 +127,7 @@ const ListaAlumnos = () => {
     setModalInsertar(true);
   };
 
+  //Crean un nuevo perfil de alumno
   const insertar = () => {
     var valorInsertar = AlumnoSeleccionado;
     valorInsertar.expediente = data[data.length - 1].expediente + 1;
@@ -156,25 +170,18 @@ const ListaAlumnos = () => {
               <td>{elemento.estadodecuota}</td>
               <td>
                 <button
-                  className="btn btn-info"
-                  aria-hidden="true"
-                  onClick={() => seleccionarAlumno(elemento, "Editar")}
-                >
-                  <i class="fa fa-info-circle"></i>
-                </button>{" "}
-                <button
                   className="btn btn-primary"
                   aria-hidden="true"
                   onClick={() => seleccionarAlumno(elemento, "Editar")}
                 >
-                  <i class="fa fa-pencil-square-o"></i>
+                  <i className="fa fa-pencil-square-o"></i>
                 </button>{" "}
                 <button
                   className="btn btn-danger"
                   aria-hidden="true"
                   onClick={() => seleccionarAlumno(elemento, "Eliminar")}
                 >
-                  <i class="fa fa-trash"></i>
+                  <i className="fa fa-trash"></i>
                 </button>
               </td>
             </tr>
