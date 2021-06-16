@@ -112,7 +112,7 @@ const ListaAlumnos = () => {
     setModalEditar(false);
   };
 
-  //Elimina el Alumno
+  //Elimina unicamente a los paises que no estan seleccionados
   const eliminar = () => {
     setData(
       data.filter(
