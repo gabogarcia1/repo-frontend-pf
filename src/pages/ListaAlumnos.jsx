@@ -122,6 +122,7 @@ const ListaAlumnos = () => {
     setModalEliminar(false);
   };
 
+  //Abre el modal para crear un Perfil de un Alumno y limpia la data del Alumno seleccionado
   const abrirModalInsertar = () => {
     setAlumnoSeleccionado(null);
     setModalInsertar(true);
@@ -303,6 +304,7 @@ const ListaAlumnos = () => {
               readOnly
               type="text"
               name="expediente"
+              //Le suma 1 al numero de expediente anterior
               value={data[data.length - 1].expediente + 1}
             />
             <br />
