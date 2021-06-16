@@ -3,6 +3,7 @@ import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 import "../css/listaDeAlumnos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
+import ModalEditar from "../components/ModalEditar";
 
 const ListaAlumnos = () => {
   const dataAlumnos = [
@@ -55,8 +56,9 @@ const ListaAlumnos = () => {
       dni: "44372970",
     },
   ];
-
+  // A la constate data le asigno el valor que tiene en dataAlumnos
   const [data, setData] = useState(dataAlumnos);
+  // Controlan cuando se abren y cierran los modales, Esta en falso hasta que hagamos click y nos deje verlo
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [modalInsertar, setModalInsertar] = useState(false);
@@ -145,13 +147,13 @@ const ListaAlumnos = () => {
               <td>{elemento.nombreyapellido}</td>
               <td>{elemento.curso}</td>
               <td>
-                <button
+                {/* <button
                   className="btn btn-info"
                   aria-hidden="true"
                   onClick={() => seleccionarAlumno(elemento, "Editar")}
                 >
                   <i class="fa fa-info-circle"></i>
-                </button>{" "}
+                </button>{" "} */}
                 <button
                   className="btn btn-primary"
                   aria-hidden="true"
@@ -172,7 +174,9 @@ const ListaAlumnos = () => {
         </tbody>
       </table>
 
-      <Modal isOpen={modalEditar}>
+      <ModalEditar />
+
+      {/* <Modal isOpen={modalEditar}>
         <ModalHeader>
           <div>
             <h3>Editar Perfil de Alumno</h3>
@@ -354,7 +358,7 @@ const ListaAlumnos = () => {
             Cancelar
           </button>
         </ModalFooter>
-      </Modal>
+      </Modal> */}
     </div>
   );
 };
