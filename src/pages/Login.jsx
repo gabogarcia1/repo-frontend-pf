@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import "../css/login.css";
 const Login = () => {
   return (
-    <>
-      <div className="container mt-5">
+    <div className="body-login">
+      <div className="container">
         <div className="row">
           <div className="col col-md-6 offset-md-3 box formulario">
             <h1 className="mt-3">Iniciar Sesion</h1>
@@ -32,7 +32,6 @@ const Login = () => {
                   required
                 />
               </div>
-
               <button
                 type="submit"
                 className="btn btn-warning btn-block ingresar"
@@ -42,7 +41,6 @@ const Login = () => {
               <Link>
                 <p className="mt-4">Olvidaste tu contraseña?</p>
               </Link>
-
               {/* <button className="btn btn-info btn-block registrarse">
                 <a href="">Registrarse</a>
               </button> */}
@@ -51,7 +49,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
