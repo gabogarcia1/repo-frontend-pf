@@ -1,6 +1,7 @@
 import React from "react";
-import { Navbar, Nav, Link } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import logo from "../images/toninHighSchoolLogo.png";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
