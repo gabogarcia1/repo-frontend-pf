@@ -2,11 +2,12 @@ import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import logo from "../images/toninHighSchoolLogo.png";
 import { Link } from "react-router-dom";
+import "../css/navbar.css";
 
 const NavBar = () => {
   return (
     <>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" expand="lg" className="nav-bar">
         <Navbar.Brand href="#home">
           <img
             alt="Tonin High School"

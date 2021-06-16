@@ -1,5 +1,6 @@
 import React from "react";
 import { Accordion, Card } from "react-bootstrap";
+import "../css/modalCalifications.css";
 
 const SubjetModalAccordion = () => {
   return (
@@ -13,6 +14,7 @@ const SubjetModalAccordion = () => {
             <Card.Body>Nota final</Card.Body>
           </Accordion.Collapse>
         </Card>
+
         <Card>
           <Accordion.Toggle as={Card.Header} eventKey="1">
             Año 2
