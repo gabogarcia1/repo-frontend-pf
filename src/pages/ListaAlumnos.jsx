@@ -6,16 +6,16 @@ import "font-awesome/css/font-awesome.css";
 
 const ListaAlumnos = () => {
   const dataPaises = [
-    { id: 1, nombre: "Filipinas", minutos: 241 },
-    { id: 2, nombre: "Brasil", minutos: 225 },
-    { id: 3, nombre: "Colombia", minutos: 216 },
-    { id: 4, nombre: "Nigeria", minutos: 216 },
-    { id: 5, nombre: "Argentina", minutos: 207 },
-    { id: 6, nombre: "Indonesia", minutos: 195 },
-    { id: 7, nombre: "Emiratos Árabes Unidos", minutos: 191 },
-    { id: 8, nombre: "México", minutos: 190 },
-    { id: 9, nombre: "Sudáfrica", minutos: 190 },
-    { id: 10, nombre: "Egipto", minutos: 186 },
+    { numerodeexpediente: 1, nombre: "Josh", minutos: 241 },
+    { numerodeexpediente: 2, nombre: "Josh", minutos: 225 },
+    { numerodeexpediente: 3, nombre: "Josh", minutos: 216 },
+    { numerodeexpediente: 4, nombre: "Josh", minutos: 216 },
+    { numerodeexpediente: 5, nombre: "Josh", minutos: 207 },
+    { numerodeexpediente: 6, nombre: "Josh", minutos: 195 },
+    { numerodeexpediente: 7, nombre: "Josh", minutos: 191 },
+    { numerodeexpediente: 8, nombre: "Josh", minutos: 190 },
+    { numerodeexpediente: 9, nombre: "Josh", minutos: 190 },
+    { numerodeexpediente: 10, nombre: "Josh", minutos: 186 },
   ];
 
   const [data, setData] = useState(dataPaises);
@@ -24,7 +24,7 @@ const ListaAlumnos = () => {
   const [modalInsertar, setModalInsertar] = useState(false);
 
   const [paisSeleccionado, setPaisSeleccionado] = useState({
-    id: "",
+    numerodeexpediente: "",
     nombre: "",
     minutos: "",
   });
@@ -45,7 +45,7 @@ const ListaAlumnos = () => {
   const editar = () => {
     var dataNueva = data;
     dataNueva.map((pais) => {
-      if (pais.id === paisSeleccionado.id) {
+      if (pais.numerodeexpediente === paisSeleccionado.numerodeexpediente) {
         pais.minutos = paisSeleccionado.minutos;
         pais.nombre = paisSeleccionado.nombre;
       }
@@ -55,7 +55,12 @@ const ListaAlumnos = () => {
   };
 
   const eliminar = () => {
-    setData(data.filter((pais) => pais.id !== paisSeleccionado.id));
+    setData(
+      data.filter(
+        (pais) =>
+          pais.numerodeexpediente !== paisSeleccionado.numerodeexpediente
+      )
+    );
     setModalEliminar(false);
   };
 
@@ -66,7 +71,8 @@ const ListaAlumnos = () => {
 
   const insertar = () => {
     var valorInsertar = paisSeleccionado;
-    valorInsertar.id = data[data.length - 1].id + 1;
+    valorInsertar.numerodeexpediente =
+      data[data.length - 1].numerodeexpediente + 1;
     var dataNueva = data;
     dataNueva.push(valorInsertar);
     setData(dataNueva);
@@ -77,16 +83,21 @@ const ListaAlumnos = () => {
     <div className="App container">
       <h2>Lista de Alumnos</h2>
       <hr />
-      <button className="btn btn-success" onClick={() => abrirModalInsertar()}>
-        Crear Perfil de Alumno
-      </button>
+      <div className="botonCrear">
+        <button
+          className="btn btn-success"
+          onClick={() => abrirModalInsertar()}
+        >
+          Crear Perfil de Alumno
+        </button>
+      </div>
       <br />
       <br />
       <table className="table table-bordered text-center">
         <thead>
           <tr>
             <th>N° de Expediente</th>
-            <th>Nombre y Apellido</th>
+            <th>Nombre y Apellio</th>
             <th>Estado de Cuota</th>
             <th>Acciones</th>
           </tr>
@@ -94,27 +105,30 @@ const ListaAlumnos = () => {
         <tbody>
           {data.map((elemento) => (
             <tr>
-              <td>{elemento.id}</td>
+              <td>{elemento.numerodeexpediente}</td>
               <td>{elemento.nombre}</td>
               <td>{elemento.minutos}</td>
               <td>
                 <button
                   className="btn btn-info"
+                  aria-hidden="true"
                   onClick={() => seleccionarPais(elemento, "Editar")}
                 >
-                  <i class="fa fa-info-circle" aria-hidden="true"></i>
+                  <i class="fa fa-info-circle"></i>
                 </button>{" "}
                 <button
                   className="btn btn-primary"
+                  aria-hidden="true"
                   onClick={() => seleccionarPais(elemento, "Editar")}
                 >
-                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <i class="fa fa-pencil-square-o"></i>
                 </button>{" "}
                 <button
                   className="btn btn-danger"
+                  aria-hidden="true"
                   onClick={() => seleccionarPais(elemento, "Eliminar")}
                 >
-                  <i class="fa fa-trash" aria-hidden="true"></i>
+                  <i class="fa fa-trash"></i>
                 </button>
               </td>
             </tr>
@@ -130,13 +144,13 @@ const ListaAlumnos = () => {
         </ModalHeader>
         <ModalBody>
           <div className="form-group">
-            <label>ID</label>
+            <label>numerodeexpediente</label>
             <input
               className="form-control"
               readOnly
               type="text"
-              name="id"
-              value={paisSeleccionado && paisSeleccionado.id}
+              name="numerodeexpediente"
+              value={paisSeleccionado && paisSeleccionado.numerodeexpediente}
             />
             <br />
 
@@ -200,13 +214,13 @@ const ListaAlumnos = () => {
         </ModalHeader>
         <ModalBody>
           <div className="form-group">
-            <label>ID</label>
+            <label>numerodeexpediente</label>
             <input
               className="form-control"
               readOnly
               type="text"
-              name="id"
-              value={data[data.length - 1].id + 1}
+              name="numerodeexpediente"
+              value={data[data.length - 1].numerodeexpediente + 1}
             />
             <br />
 
