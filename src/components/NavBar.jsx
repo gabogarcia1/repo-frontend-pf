@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import logo from "../images/toninHighSchoolLogo.png";
 
 const NavBar = () => {
@@ -18,10 +19,15 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Alumnos</Nav.Link>
-            <Nav.Link href="#link">Profesores</Nav.Link>
-            <Nav.Link href="#link">Notas</Nav.Link>
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
+            <Link to="/alumnos" className="nav-link">
+              Alumnos
+            </Link>
+            <Link to="/califications" className="nav-link">
+              Notas (Temporal)
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
