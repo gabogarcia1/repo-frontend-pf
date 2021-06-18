@@ -168,10 +168,10 @@ const ListaAlumnos = () => {
               <td>{elemento.expediente}</td>
               <td>{elemento.nombreyapellido}</td>
               <td>{elemento.curso}</td>
-              <td>{elemento.estadodecuota}<i class="fa fa-exclamation" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i></td>
+              <td>{elemento.estadodecuota}</td>
               <td>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-warning"
                   aria-hidden="true"
                   onClick={() => seleccionarAlumno(elemento, "Editar")}
                 >
