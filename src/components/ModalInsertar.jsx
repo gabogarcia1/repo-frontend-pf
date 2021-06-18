@@ -54,6 +54,16 @@ const ModalInsertar = ({
             />
             <br />
 
+            <label>Estado de Cuota</label>
+            <input
+              className="form-control"
+              type="text"
+              name="estadodecuota"
+              value={AlumnoSeleccionado ? AlumnoSeleccionado.estadodecuota : ""}
+              onChange={handleChange}
+            />
+            <br />
+
             <label>Domicilio</label>
             <input
               className="form-control"

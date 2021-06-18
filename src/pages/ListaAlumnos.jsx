@@ -105,6 +105,7 @@ const ListaAlumnos = () => {
     dataNueva.map((alumno) => {
       if (alumno.expediente === AlumnoSeleccionado.expediente) {
         alumno.curso = AlumnoSeleccionado.curso;
+        alumno.estadodecuota = AlumnoSeleccionado.estadodecuota;
         alumno.nombreyapellido = AlumnoSeleccionado.nombreyapellido;
         alumno.domicilio = AlumnoSeleccionado.domicilio;
         alumno.contacto = AlumnoSeleccionado.contacto;
@@ -115,7 +116,7 @@ const ListaAlumnos = () => {
     setModalEditar(false);
   };
 
-  //Elimina unicamente a los paises que no estan seleccionados
+  //Elimina unicamente a los alumnos que no estan seleccionados
   const eliminar = () => {
     setData(
       data.filter(
