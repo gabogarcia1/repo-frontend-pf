@@ -45,7 +45,6 @@ const ModalEditar = ({
             onChange={handleChange}
           />
           <br />
-
           <label>Estado de Cuota</label>
           <input
             className="form-control"
@@ -55,7 +54,6 @@ const ModalEditar = ({
             onChange={handleChange}
           />
           <br />
-
           <label>Domicilio</label>
           <input
             className="form-control"
