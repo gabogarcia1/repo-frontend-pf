@@ -8,7 +8,7 @@ const TablaAlumnos = ({ data, seleccionarAlumno }) => {
       <thead>
         <tr>
           <th>N° de Expediente</th>
-          <th>Nombre y Apellio</th>
+          <th>Nombre y Apellido</th>
           <th>Curso</th>
           <th>Estado de Cuota</th>
           <th>Acciones</th>
@@ -18,7 +18,9 @@ const TablaAlumnos = ({ data, seleccionarAlumno }) => {
         {data.map((elemento) => (
           <tr>
             <td>{elemento.expediente}</td>
-            <td>{elemento.nombreyapellido}</td>
+            <td>
+              {elemento.nombre} {elemento.apellido}
+            </td>
             <td>{elemento.curso}</td>
             <td>{elemento.estadodecuota}</td>
             <td>

@@ -11,7 +11,8 @@ const ListaAlumnos = () => {
   const dataAlumnos = [
     {
       expediente: 1,
-      nombreyapellido: "Tom Hiddleston ",
+      nombre: "Tom",
+      apellido: "Hiddleston ",
       curso: "3° Año",
       estadodecuota: "Al Dia",
       domicilio: "Ecuador 4036",
@@ -20,7 +21,8 @@ const ListaAlumnos = () => {
     },
     {
       expediente: 2,
-      nombreyapellido: "Gugu Mbatha-Raw",
+      nombre: "Chris",
+      apellido: "Evans",
       curso: "1° Año",
       estadodecuota: "Al Dia",
       domicilio: "Paraguay 4036",
@@ -29,7 +31,8 @@ const ListaAlumnos = () => {
     },
     {
       expediente: 3,
-      nombreyapellido: "Wunmi Mosaku",
+      nombre: "Chris",
+      apellido: "Hemsworth",
       curso: "2° Año",
       estadodecuota: "Retrasado",
       domicilio: "Colombia 4036",
@@ -38,7 +41,8 @@ const ListaAlumnos = () => {
     },
     {
       expediente: 4,
-      nombreyapellido: "Eugene Cordero",
+      nombre: "Mark",
+      apellido: "Ruffalo",
       curso: "1° Año",
       estadodecuota: "Al Dia",
       domicilio: "Peru 4036",
@@ -47,7 +51,8 @@ const ListaAlumnos = () => {
     },
     {
       expediente: 5,
-      nombreyapellido: "Tara Strong",
+      nombre: "Paul",
+      apellido: "Rudd",
       curso: "3° Año",
       estadodecuota: "Retrasado",
       domicilio: "Chile 4036",
@@ -56,7 +61,8 @@ const ListaAlumnos = () => {
     },
     {
       expediente: 6,
-      nombreyapellido: "Owen Wilson",
+      nombre: "Jeremy",
+      apellido: "Renner",
       curso: "4° Año",
       estadodecuota: "Al Dia",
       domicilio: "Brasil 4036",
@@ -76,7 +82,8 @@ const ListaAlumnos = () => {
   // Le damos un estado al Alumno seleccionado
   const [AlumnoSeleccionado, setAlumnoSeleccionado] = useState({
     expediente: "",
-    nombreyapellido: "",
+    nombre: "",
+    apellido: "",
     curso: "",
     estadodecuota: "",
     domicilio: "",
@@ -106,7 +113,8 @@ const ListaAlumnos = () => {
       if (alumno.expediente === AlumnoSeleccionado.expediente) {
         alumno.curso = AlumnoSeleccionado.curso;
         alumno.estadodecuota = AlumnoSeleccionado.estadodecuota;
-        alumno.nombreyapellido = AlumnoSeleccionado.nombreyapellido;
+        alumno.nombre = AlumnoSeleccionado.nombre;
+        alumno.apellido = AlumnoSeleccionado.apellido;
         alumno.domicilio = AlumnoSeleccionado.domicilio;
         alumno.contacto = AlumnoSeleccionado.contacto;
         alumno.dni = AlumnoSeleccionado.dni;

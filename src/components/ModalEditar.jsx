@@ -27,12 +27,21 @@ const ModalEditar = ({
             value={AlumnoSeleccionado && AlumnoSeleccionado.expediente}
           />
           <br />
-          <label>Nombre y Apellido</label>
+          <label>Nombre</label>
           <input
             className="form-control"
             type="text"
-            name="nombreyapellido"
-            value={AlumnoSeleccionado && AlumnoSeleccionado.nombreyapellido}
+            name="nombre"
+            value={AlumnoSeleccionado && AlumnoSeleccionado.nombre}
+            onChange={handleChange}
+          />
+          <br />
+          <label>Apellido</label>
+          <input
+            className="form-control"
+            type="text"
+            name="apellido"
+            value={AlumnoSeleccionado && AlumnoSeleccionado.apellido}
             onChange={handleChange}
           />
           <br />
