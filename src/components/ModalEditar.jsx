@@ -1,6 +1,7 @@
 import React from "react";
 import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 import "../css/listaDeAlumnos.css";
+
 const ModalEditar = ({
   modalEditar,
   setModalEditar,
