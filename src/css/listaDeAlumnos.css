@@ -6,3 +6,8 @@
 .nombre-nacimiento {
   width: 100%;
 }
+
+.border-img {
+  border: 2px rgba(36, 36, 35, 0.342) solid !important;
+  border-radius: 50%;
+}
