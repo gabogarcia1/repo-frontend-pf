@@ -97,10 +97,6 @@ const ListaAlumnos = () => {
   const seleccionarAlumno = (elemento, caso) => {
     setAlumnoSeleccionado(elemento);
     switch (caso) {
-      case "Info":
-        // setModalInfo(true);
-        break;
-
       case "Editar":
         setModalEditar(true);
         break;
@@ -185,7 +181,11 @@ const ListaAlumnos = () => {
         setModalShow={setModalShow}
       />
 
-      <ModalInfo show={modalShow} onHide={() => setModalShow(false)} />
+      <ModalInfo
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        AlumnoSeleccionado={AlumnoSeleccionado}
+      />
 
       <ModalEditar
         modalEditar={modalEditar}

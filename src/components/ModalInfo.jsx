@@ -2,7 +2,7 @@ import React from "react";
 import { Modal, Button, Row, Col, Image, ListGroup } from "react-bootstrap";
 import logo from "../images/toninHighSchoolLogo.png";
 
-function MyVerticallyCenteredModal(props) {
+function ModalInfo(props) {
   return (
     <Modal
       {...props}
@@ -90,4 +90,4 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-export default MyVerticallyCenteredModal;
+export default ModalInfo;
