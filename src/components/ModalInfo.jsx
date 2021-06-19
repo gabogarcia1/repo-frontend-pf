@@ -142,7 +142,7 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
                     Calificaciones
                   </ListGroup.Item>{" "}
                   <div className="w-100">
-                    <Link to="/califications w-100">
+                    <Link to="/califications">
                       <Button className="back-btn w-100">
                         <i class="fa fa-book" aria-hidden="true"></i>
                       </Button>
