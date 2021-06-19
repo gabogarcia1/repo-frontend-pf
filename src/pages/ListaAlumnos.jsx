@@ -13,7 +13,7 @@ const ListaAlumnos = () => {
     {
       expediente: 1,
       nombre: "Tom",
-      apellido: "Hiddleston ",
+      apellido: "Hiddleston",
       curso: "3° Año",
       estadodecuota: "Al Dia",
       domicilio: "Ecuador 4036",
