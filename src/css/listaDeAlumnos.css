@@ -2,3 +2,7 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.nombre-nacimiento {
+  width: 100%;
+}

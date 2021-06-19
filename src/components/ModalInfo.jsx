@@ -2,7 +2,7 @@ import React from "react";
 import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 import { Row, Col, Image, ListGroup } from "react-bootstrap";
 import imagenDefault from "../images/profile-image-default.png";
-
+import "../css/listaDeAlumnos.css";
 const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
   return (
     <Modal
@@ -17,12 +17,14 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
         </div>
       </ModalHeader>
       <ModalBody>
-        <div className="">
-          <div className="">
-            <Row className="align-items-start flex-column">
+        <div className="d-flex align-items-center">
+          <div className="d-flex flex-column pl-5">
+            <Row className="align-items-start">
               <Col xs="auto">
                 <ListGroup variant="flush">
-                  <ListGroup.Item>Nombre y Apellido</ListGroup.Item>{" "}
+                  <ListGroup.Item className="pl-0">
+                    Nombre y Apellido
+                  </ListGroup.Item>{" "}
                   <input
                     className="form-control"
                     readOnly
@@ -31,10 +33,10 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
                     value={AlumnoSeleccionado && AlumnoSeleccionado.nombre}
                   />{" "}
                 </ListGroup>
-              </Col>
-              <Col xs="auto">
                 <ListGroup variant="flush">
-                  <ListGroup.Item>Fecha de Nacimiento</ListGroup.Item>{" "}
+                  <ListGroup.Item className="pl-0">
+                    Fecha de Nacimiento
+                  </ListGroup.Item>{" "}
                   <input
                     className="form-control"
                     readOnly
@@ -46,10 +48,10 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
               </Col>
             </Row>
 
-            <Row className="align-items-start flex-column">
+            <Row className="align-items-start">
               <Col xs="auto">
                 <ListGroup variant="flush">
-                  <ListGroup.Item>Domicilio</ListGroup.Item>{" "}
+                  <ListGroup.Item className="pl-0">Domicilio</ListGroup.Item>{" "}
                   <input
                     className="form-control"
                     readOnly
@@ -61,10 +63,10 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
               </Col>
             </Row>
 
-            <Row className="align-items-start flex-column">
+            <Row className="align-items-start">
               <Col xs="auto">
                 <ListGroup variant="flush">
-                  <ListGroup.Item>Contacto</ListGroup.Item>{" "}
+                  <ListGroup.Item className="pl-0">Contacto</ListGroup.Item>{" "}
                   <input
                     className="form-control"
                     readOnly
@@ -75,11 +77,12 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
                 </ListGroup>
               </Col>
             </Row>
-
-            <Row className="align-items-start flex-column">
+          </div>
+          <div className="d-flex flex-column pl-5">
+            <Row className="align-items-start">
               <Col xs="auto">
                 <ListGroup variant="flush">
-                  <ListGroup.Item>DNI</ListGroup.Item>{" "}
+                  <ListGroup.Item className="pl-0">DNI</ListGroup.Item>{" "}
                   <input
                     className="form-control"
                     readOnly
@@ -90,11 +93,10 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
                 </ListGroup>
               </Col>
             </Row>
-
-            <Row className="align-items-start flex-column">
+            <Row className="align-items-start">
               <Col xs="auto">
                 <ListGroup variant="flush">
-                  <ListGroup.Item>Curso</ListGroup.Item>{" "}
+                  <ListGroup.Item className="pl-0">Curso</ListGroup.Item>{" "}
                   <input
                     className="form-control"
                     readOnly
@@ -106,10 +108,29 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
               </Col>
             </Row>
 
-            <Row className="align-items-start flex-column">
+            <Row className="align-items-start">
               <Col xs="auto">
                 <ListGroup variant="flush">
-                  <ListGroup.Item>Calificaciones</ListGroup.Item>{" "}
+                  <ListGroup.Item className="pl-0">
+                    Numero de expediente
+                  </ListGroup.Item>{" "}
+                  <input
+                    className="form-control"
+                    readOnly
+                    type="text"
+                    name="expediente"
+                    value={AlumnoSeleccionado && AlumnoSeleccionado.expediente}
+                  />{" "}
+                </ListGroup>
+              </Col>
+            </Row>
+
+            <Row className="align-items-start">
+              <Col xs="auto">
+                <ListGroup variant="flush">
+                  <ListGroup.Item className="pl-0">
+                    Calificaciones
+                  </ListGroup.Item>{" "}
                   <input
                     className="form-control"
                     readOnly
@@ -120,8 +141,9 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
               </Col>
             </Row>
           </div>
-          <div className="d-flex justify-content-end">
-            <img src={imagenDefault} thumbnail className="w-25" />
+
+          <div className="d-flex justify-content-center align-items-center pb-3">
+            <img src={imagenDefault} thumbnail className="w-75 h-75" />
           </div>
         </div>
       </ModalBody>

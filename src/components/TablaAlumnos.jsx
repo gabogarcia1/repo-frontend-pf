@@ -4,7 +4,7 @@ import "font-awesome/css/font-awesome.css";
 
 const TablaAlumnos = ({ data, seleccionarAlumno, setModalShow }) => {
   return (
-    <table className="table table-bordered text-center">
+    <table className="table table-bordered text-center table-responsive-sm  ">
       <thead>
         <tr>
           <th>N° de Expediente</th>
