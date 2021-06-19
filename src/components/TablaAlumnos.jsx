@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
 
@@ -25,13 +24,13 @@ const TablaAlumnos = ({ data, seleccionarAlumno, setModalShow }) => {
             <td>{elemento.curso}</td>
             <td>{elemento.estadodecuota}</td>
             <td>
-              <Button
-                className=""
-                variant="primary"
-                onClick={() => setModalShow(true)}
+              <button
+                className="btn btn-info"
+                aria-hidden="true"
+                onClick={() => seleccionarAlumno(elemento, "Ver")}
               >
                 <i class="fa fa-info-circle" aria-hidden="true"></i>
-              </Button>{" "}
+              </button>{" "}
               <button
                 className="btn btn-warning"
                 aria-hidden="true"
