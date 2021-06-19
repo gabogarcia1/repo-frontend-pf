@@ -1,13 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 import { Row, Col, ListGroup, Button } from "react-bootstrap";
 import imagenDefault from "../images/img-perfil.png";
 import "../css/listaDeAlumnos.css";
 import "font-awesome/css/font-awesome.css";
-import { Link } from "react-router-dom";
 
 const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
-  let nombreCompleto = `${AlumnoSeleccionado.nombre} ${AlumnoSeleccionado.apellido}`;
+  // const nombreCompleto = `${AlumnoSeleccionado.nombre} ${AlumnoSeleccionado.apellido}`;
 
   return (
     <Modal
@@ -35,7 +35,7 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
                     readOnly
                     type="text"
                     name="nombreyapellido"
-                    value={nombreCompleto}
+                    // value={nombreCompleto}
                   />
                 </ListGroup>
               </Col>
@@ -152,7 +152,7 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
               </Col>
             </Row>
           </div>
-          <div className="d-flex justify-content-center align-items-center pb-3 pl-2">
+          <div className="d-flex justify-content-center align-items-center pb-3 pl-3">
             <img src={imagenDefault} thumbnail className="border-img" />
           </div>
         </div>

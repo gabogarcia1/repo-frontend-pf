@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
 
-const TablaAlumnos = ({ data, seleccionarAlumno, setModalShow }) => {
+const TablaAlumnos = ({ data, seleccionarAlumno }) => {
   return (
     <table className="table table-bordered text-center table-responsive-sm  ">
       <thead>
@@ -25,7 +25,7 @@ const TablaAlumnos = ({ data, seleccionarAlumno, setModalShow }) => {
             <td>{elemento.estadodecuota}</td>
             <td>
               <button
-                className="btn btn-info"
+                className="btn btn-warning"
                 aria-hidden="true"
                 onClick={() => seleccionarAlumno(elemento, "Ver")}
               >
@@ -39,7 +39,7 @@ const TablaAlumnos = ({ data, seleccionarAlumno, setModalShow }) => {
                 <i className="fa fa-pencil-square-o"></i>
               </button>{" "}
               <button
-                className="btn btn-danger"
+                className="btn btn-warning"
                 aria-hidden="true"
                 onClick={() => seleccionarAlumno(elemento, "Eliminar")}
               >
