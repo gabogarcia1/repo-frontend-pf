@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Button } from "react-bootstrap";
+import ModalInfo from "../components/ModalInfo";
 import ModalEditar from "../components/ModalEditar";
 import ModalEliminar from "../components/ModalEliminar";
 import ModalInsertar from "../components/ModalInsertar";
@@ -75,6 +77,7 @@ const ListaAlumnos = () => {
   const [data, setData] = useState(dataAlumnos);
 
   // Controlan cuando se abren y cierran los modales, Esta en falso para que este cerrado hasta que no se lo diga yo
+  const [modalShow, setModalShow] = React.useState(false);
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [modalInsertar, setModalInsertar] = useState(false);
@@ -91,10 +94,22 @@ const ListaAlumnos = () => {
     dni: "",
   });
 
-  // Le indico que modal tiene que abrir, ya sea editar o dar de baja
+  // Le indico que modal tiene que abrir
   const seleccionarAlumno = (elemento, caso) => {
     setAlumnoSeleccionado(elemento);
-    caso === "Editar" ? setModalEditar(true) : setModalEliminar(true);
+    switch (caso) {
+      case "Info":
+        // setModalInfo(true);
+        break;
+
+      case "Editar":
+        setModalEditar(true);
+        break;
+
+      case "Eliminar":
+        setModalEliminar(true);
+        break;
+    }
   };
 
   // Con esto guardo lo que el moderador esta escribiendo en los inputs
@@ -165,7 +180,13 @@ const ListaAlumnos = () => {
       <br />
       <br />
 
-      <TablaAlumnos data={data} seleccionarAlumno={seleccionarAlumno} />
+      <TablaAlumnos
+        data={data}
+        seleccionarAlumno={seleccionarAlumno}
+        setModalShow={setModalShow}
+      />
+
+      <ModalInfo show={modalShow} onHide={() => setModalShow(false)} />
 
       <ModalEditar
         modalEditar={modalEditar}
