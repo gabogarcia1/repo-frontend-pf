@@ -28,9 +28,6 @@ const NavBar = () => {
             <Link to="/alumnos" className="nav-link">
               Alumnos
             </Link>
-            <Link to="/califications" className="nav-link">
-              Notas (Temporal)
-            </Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
