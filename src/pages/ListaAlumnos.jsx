@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
 import ModalInfo from "../components/ModalInfo";
 import ModalEditar from "../components/ModalEditar";
 import ModalEliminar from "../components/ModalEliminar";

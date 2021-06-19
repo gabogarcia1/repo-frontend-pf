@@ -1,7 +1,7 @@
 import React from "react";
 // import LoginForm from "../components/LoginForm";
 import { Link } from "react-router-dom";
-import "../css/login.css";
+// import "../css/login.css";
 const Login = () => {
   return (
     <div className="body-login">
