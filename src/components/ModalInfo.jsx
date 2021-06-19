@@ -1,5 +1,6 @@
 import React from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Row, Col, Image, ListGroup } from "react-bootstrap";
+import logo from "../images/toninHighSchoolLogo.png";
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -15,12 +16,70 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        <Row className="align-items-center">
+          <Col xs="auto">
+            <ListGroup variant="flush">
+              <ListGroup.Item>Nombre y Apellido</ListGroup.Item>
+              <ListGroup.Item>Nombre y Apellido</ListGroup.Item>
+            </ListGroup>
+          </Col>
+
+          <Col xs="auto">
+            <ListGroup variant="flush">
+              <ListGroup.Item>Fecha de Nacimiento</ListGroup.Item>
+              <ListGroup.Item>Fecha de Nacimiento</ListGroup.Item>
+            </ListGroup>
+          </Col>
+
+          <Col xs={6} md={4}>
+            <Image src={logo} thumbnail />
+          </Col>
+        </Row>
+
+        <Row className="align-items-center">
+          <Col xs="auto">
+            <ListGroup variant="flush">
+              <ListGroup.Item>Domicilio</ListGroup.Item>
+              <ListGroup.Item>Domicilio</ListGroup.Item>
+            </ListGroup>
+          </Col>
+        </Row>
+
+        <Row className="align-items-center">
+          <Col xs="auto">
+            <ListGroup variant="flush">
+              <ListGroup.Item>Contacto</ListGroup.Item>
+              <ListGroup.Item>Contacto</ListGroup.Item>
+            </ListGroup>
+          </Col>
+        </Row>
+
+        <Row className="align-items-center">
+          <Col xs="auto">
+            <ListGroup variant="flush">
+              <ListGroup.Item>DNI</ListGroup.Item>
+              <ListGroup.Item>DNI</ListGroup.Item>
+            </ListGroup>
+          </Col>
+        </Row>
+
+        <Row className="align-items-center">
+          <Col xs="auto">
+            <ListGroup variant="flush">
+              <ListGroup.Item>Curso</ListGroup.Item>
+              <ListGroup.Item>Curso</ListGroup.Item>
+            </ListGroup>
+          </Col>
+        </Row>
+
+        <Row className="align-items-center">
+          <Col xs="auto">
+            <ListGroup variant="flush">
+              <ListGroup.Item>Calificaciones</ListGroup.Item>
+              <ListGroup.Item>Calificaciones</ListGroup.Item>
+            </ListGroup>
+          </Col>
+        </Row>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide} className="btn btn-danger">
