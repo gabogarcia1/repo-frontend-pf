@@ -7,8 +7,6 @@ import "../css/listaDeAlumnos.css";
 import "font-awesome/css/font-awesome.css";
 
 const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
-  // const nombreCompleto = `${AlumnoSeleccionado.nombre} ${AlumnoSeleccionado.apellido}`;
-
   return (
     <Modal
       isOpen={modalVer}
@@ -35,7 +33,12 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
                     readOnly
                     type="text"
                     name="nombreyapellido"
-                    // value={nombreCompleto}
+                    value={
+                      AlumnoSeleccionado &&
+                      AlumnoSeleccionado.nombre +
+                        " " +
+                        AlumnoSeleccionado.apellido
+                    }
                   />
                 </ListGroup>
               </Col>
