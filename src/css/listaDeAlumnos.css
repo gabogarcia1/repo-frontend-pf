@@ -10,4 +10,10 @@
 .border-img {
   border: 2px rgba(36, 36, 35, 0.342) solid !important;
   border-radius: 50%;
+  width: 290px;
+  height: 250px;
+}
+
+.input-style{
+  width: 200px;
 }
