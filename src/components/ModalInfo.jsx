@@ -1,8 +1,10 @@
 import React from "react";
 import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
-import { Row, Col, ListGroup } from "react-bootstrap";
+import { Row, Col, ListGroup, Button } from "react-bootstrap";
 import imagenDefault from "../images/profile-image-default.png";
 import "../css/listaDeAlumnos.css";
+import "font-awesome/css/font-awesome.css";
+import { Link } from "react-router-dom";
 const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
   return (
     <Modal
@@ -136,22 +138,26 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
             <Row className="align-items-start">
               <Col xs="auto">
                 <ListGroup variant="flush">
-                  <ListGroup.Item className="pl-0">
+                  <ListGroup.Item className="pl-0 border-0">
                     Calificaciones
-                  </ListGroup.Item>
-                  <input
-                    className="form-control"
-                    readOnly
-                    type="text"
-                    name="expediente"
-                  />
+                  </ListGroup.Item>{" "}
+                  <div className="w-100">
+                    <Link to="/califications w-100">
+                      <Button className="back-btn w-100">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                      </Button>
+                    </Link>
+                  </div>
                 </ListGroup>
               </Col>
             </Row>
           </div>
-
           <div className="d-flex justify-content-center align-items-center pb-3">
-            <img src={imagenDefault} thumbnail className="w-75 h-75" />
+            <img
+              src={imagenDefault}
+              thumbnail
+              className="w-75 h-75 border-img"
+            />
           </div>
         </div>
       </ModalBody>
