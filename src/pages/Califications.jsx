@@ -38,39 +38,39 @@ const Califications = () => {
           <Row xs={1} md={2} className="g-4">
             <SubjetCard
               materia="Matematicas"
-              class="fa fa-plus fa-5x subjet-icon"
+              className="fa fa-plus fa-5x subjet-icon"
             />
             <SubjetCard
               materia="Lengua y Literatura"
-              class="fa fa-book fa-5x subjet-icon"
+              className="fa fa-book fa-5x subjet-icon"
             />
             <SubjetCard
               materia="Biologia"
-              class="fa fa-leaf fa-5x subjet-icon"
+              className="fa fa-leaf fa-5x subjet-icon"
             />
             <SubjetCard
               materia="Fisica"
-              class="fa fa-graduation-cap fa-5x subjet-icon"
+              className="fa fa-graduation-cap fa-5x subjet-icon"
             />
             <SubjetCard
               materia="Quimica"
-              class="fa fa-flask fa-5x subjet-icon"
+              className="fa fa-flask fa-5x subjet-icon"
             />
             <SubjetCard
               materia="Economia"
-              class="fa fa-percent fa-5x subjet-icon"
+              className="fa fa-percent fa-5x subjet-icon"
             />
             <SubjetCard
               materia="Geografia"
-              class="fa fa-globe fa-5x subjet-icon"
+              className="fa fa-globe fa-5x subjet-icon"
             />
             <SubjetCard
               materia="Historia"
-              class="fa fa-compass fa-5x subjet-icon"
+              className="fa fa-compass fa-5x subjet-icon"
             />
             <SubjetCard
               materia="Educacion Fisica"
-              class="fa fa-futbol-o fa-5x subjet-icon"
+              className="fa fa-futbol-o fa-5x subjet-icon"
             />
           </Row>
         </div>
