@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Card, Button } from "react-bootstrap";
+import { Col, Card } from "react-bootstrap";
 import "../css/califications.css";
 import SubjetModal from "./SubjetModal";
 
@@ -11,7 +11,7 @@ const SubjetCard = (datos) => {
           <SubjetModal
             variant={datos.variant}
             materia={datos.materia}
-            class={datos.class}
+            className={datos.className}
           />
         </Card>
       </Col>
