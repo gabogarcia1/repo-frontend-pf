@@ -14,7 +14,7 @@ const Califications = () => {
           <div className="pl-4 pr-1">
             <Link to="/alumnos">
               <Button className="back-btn">
-                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <i className="fa fa-arrow-left" aria-hidden="true"></i>
               </Button>
             </Link>
           </div>
