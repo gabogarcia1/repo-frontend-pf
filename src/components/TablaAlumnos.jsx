@@ -25,21 +25,21 @@ const TablaAlumnos = ({ data, seleccionarAlumno }) => {
             <td>{elemento.estadodecuota}</td>
             <td>
               <button
-                className="btn btn-warning"
+                className="btn btn-outline-warning"
                 aria-hidden="true"
                 onClick={() => seleccionarAlumno(elemento, "Ver")}
               >
                 <i class="fa fa-info-circle" aria-hidden="true"></i>
               </button>{" "}
               <button
-                className="btn btn-warning"
+                className="btn btn-outline-warning"
                 aria-hidden="true"
                 onClick={() => seleccionarAlumno(elemento, "Editar")}
               >
                 <i className="fa fa-pencil-square-o"></i>
               </button>{" "}
               <button
-                className="btn btn-warning"
+                className="btn btn-outline-warning"
                 aria-hidden="true"
                 onClick={() => seleccionarAlumno(elemento, "Eliminar")}
               >

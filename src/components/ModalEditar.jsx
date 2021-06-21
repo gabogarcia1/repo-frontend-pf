@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
+import { Dropdown, DropdownButton, ButtonGroup } from "react-bootstrap";
 import "../css/listaDeAlumnos.css";
 
 const ModalEditar = ({
@@ -27,6 +28,7 @@ const ModalEditar = ({
             value={AlumnoSeleccionado && AlumnoSeleccionado.expediente}
           />
           <br />
+
           <label>Nombre</label>
           <input
             className="form-control"
@@ -36,6 +38,7 @@ const ModalEditar = ({
             onChange={handleChange}
           />
           <br />
+
           <label>Apellido</label>
           <input
             className="form-control"
@@ -45,6 +48,7 @@ const ModalEditar = ({
             onChange={handleChange}
           />
           <br />
+
           <label>Curso</label>
           <input
             className="form-control"
@@ -54,6 +58,7 @@ const ModalEditar = ({
             onChange={handleChange}
           />
           <br />
+
           <label>Estado de Cuota</label>
           <input
             className="form-control"
@@ -63,6 +68,7 @@ const ModalEditar = ({
             onChange={handleChange}
           />
           <br />
+
           <label>Domicilio</label>
           <input
             className="form-control"
@@ -72,6 +78,7 @@ const ModalEditar = ({
             onChange={handleChange}
           />
           <br />
+
           <label>Contacto</label>
           <input
             className="form-control"
@@ -81,6 +88,7 @@ const ModalEditar = ({
             onChange={handleChange}
           />
           <br />
+
           <label>DNI</label>
           <input
             className="form-control"
@@ -90,6 +98,7 @@ const ModalEditar = ({
             onChange={handleChange}
           />
           <br />
+
           <label>Fecha de Nacimiento</label>
           <input
             className="form-control"
