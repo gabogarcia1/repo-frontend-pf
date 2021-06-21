@@ -25,6 +25,9 @@ const NavBar = () => {
             <Link to="/" className="nav-link">
               Home
             </Link>
+            <Link to="/login" className="nav-link">
+              Iniciar sesion
+            </Link>
             <Link to="/alumnos" className="nav-link">
               Alumnos
             </Link>
