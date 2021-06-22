@@ -26,6 +26,7 @@ const ModalEditar = ({
             type="text"
             name="expediente"
             value={AlumnoSeleccionado && AlumnoSeleccionado.expediente}
+            maxLength="20"
           />
           <br />
 
@@ -36,6 +37,7 @@ const ModalEditar = ({
             name="nombre"
             value={AlumnoSeleccionado && AlumnoSeleccionado.nombre}
             onChange={handleChange}
+            maxLength="20"
           />
           <br />
 
@@ -46,6 +48,7 @@ const ModalEditar = ({
             name="apellido"
             value={AlumnoSeleccionado && AlumnoSeleccionado.apellido}
             onChange={handleChange}
+            maxLength="20"
           />
           <br />
 
@@ -56,6 +59,7 @@ const ModalEditar = ({
             name="curso"
             value={AlumnoSeleccionado && AlumnoSeleccionado.curso}
             onChange={handleChange}
+            maxLength="20"
           />
           <br />
 
@@ -66,6 +70,7 @@ const ModalEditar = ({
             name="estadodecuota"
             value={AlumnoSeleccionado && AlumnoSeleccionado.estadodecuota}
             onChange={handleChange}
+            maxLength="20"
           />
           <br />
 
@@ -76,6 +81,7 @@ const ModalEditar = ({
             name="domicilio"
             value={AlumnoSeleccionado && AlumnoSeleccionado.domicilio}
             onChange={handleChange}
+            maxLength="20"
           />
           <br />
 
@@ -86,6 +92,7 @@ const ModalEditar = ({
             name="contacto"
             value={AlumnoSeleccionado && AlumnoSeleccionado.contacto}
             onChange={handleChange}
+            maxLength="20"
           />
           <br />
 
@@ -96,6 +103,7 @@ const ModalEditar = ({
             name="dni"
             value={AlumnoSeleccionado && AlumnoSeleccionado.dni}
             onChange={handleChange}
+            maxLength="20"
           />
           <br />
 
@@ -106,6 +114,7 @@ const ModalEditar = ({
             name="nacimiento"
             value={AlumnoSeleccionado && AlumnoSeleccionado.nacimiento}
             onChange={handleChange}
+            maxLength="20"
           />
           <br />
         </div>
