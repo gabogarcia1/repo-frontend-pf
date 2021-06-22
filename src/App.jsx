@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Layout from "./components/Layout";
 import Califications from "./pages/Califications";
 import ListaAlumnos from "./pages/ListaAlumnos";
+import Alumno from "./pages/Alumno";
 
 const App = () => {
   return (
@@ -15,7 +16,7 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/califications" component={Califications} />
-            <Route exact path="/alumnos" component={ListaAlumnos} />
+            <Route exact path="/alumnos" component={Alumno} />
           </Switch>
         </Layout>
       </Router>
