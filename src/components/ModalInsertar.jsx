@@ -101,6 +101,16 @@ const ModalInsertar = ({
               onChange={handleChange}
             />
             <br />
+
+            <label>Fecha de Nacimiento</label>
+            <input
+              className="form-control"
+              type="text"
+              name="nacimiento"
+              value={AlumnoSeleccionado && AlumnoSeleccionado.nacimiento}
+              onChange={handleChange}
+            />
+            <br />
           </div>
         </ModalBody>
         <ModalFooter>

@@ -2,3 +2,22 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.nombre-nacimiento {
+  width: 100%;
+}
+
+.border-img {
+  border: 2px rgba(36, 36, 35, 0.342) solid !important;
+  border-radius: 50%;
+  width: 290px;
+  height: 250px;
+}
+
+.input-style {
+  width: 190px;
+}
+
+.imagenDeAlumno {
+  
+}

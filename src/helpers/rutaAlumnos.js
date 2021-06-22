@@ -3,18 +3,20 @@ import qs from "qs";
 
 //Traer todos los cursos con el limite y desde que registro
 export const getAlumnos = async (desde = 0, limite = 10) => {
-  let url = `http://localhost:3005/alumnos`;
+  const token=JSON.parse(localStorage.getItem("token")) || '';
+  let url = `http://localhost:3005/alumno`;
 
   const options = {
     method: "GET",
     headers: {
       "content-type": "application/x-www-form-urlencoded",
+      token: token,
     },
   };
   try {
     const resp = await axios(url, options);
     const { data } = resp;
-
+    console.log(data)
     return data;
   } catch (error) {
     return {
@@ -25,8 +27,8 @@ export const getAlumnos = async (desde = 0, limite = 10) => {
 };
 
 //Traer un curso según su id
-export const getCursoId = async (id) => {
-  let url = `http://localhost:3005/cursos/${id}`;
+export const getAlumnoId = async (id) => {
+  let url = `http://localhost:3005/alumno/${id}`;
   const options = {
     method: "GET",
     headers: {
@@ -47,7 +49,7 @@ export const getCursoId = async (id) => {
 };
 
 //Crear nuevo alumno
-export const addCurso = async (datos) => {
+export const addAlumno = async (datos) => {
   console.log(datos);
   const token = JSON.parse(localStorage.getItem("token")) || "";
   let url = "http://localhost:3005/alumno";
