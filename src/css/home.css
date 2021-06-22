@@ -1,19 +1,6 @@
-.home-container {
-  margin-top: 10px;
-}
-.home-card {
-  background: transparent;
-  border: transparent;
-  padding: 10px;
-  display: flex;
-}
-.home-card p {
-  color: rgb(36, 36, 35);
-  font-size: 30px;
-}
 .logoCampus {
-  width: 300px;
-  height: 300px;
+  width: 30%;
+  height: 30%;
   border-radius: 150px;
   object-fit: cover;
   justify-content: center;
@@ -27,4 +14,20 @@
 }
 .tarjeta {
   border: transparent;
+  background-color: rgb(36, 36, 35);
+}
+
+.btn-funcion {
+  background-color: rgb(245, 203, 92);
+  color: black;
+  border: 1px rgba(41, 41, 41, 0.438) solid;
+}
+
+.btn-funcion:hover {
+  background-color: rgb(251, 197, 48);
+}
+
+.btn-funcion .fa:hover {
+  color: black;
+  opacity: 100%;
 }

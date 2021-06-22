@@ -1,23 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  withRouter,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Layout from "./components/Layout";
 import Califications from "./pages/Califications";
 import ListaAlumnos from "./pages/ListaAlumnos";
+import NavBar from "./components/NavBar";
 
 const App = () => {
   return (
     <>
       <Router>
-        <Layout>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/alumnos" component={ListaAlumnos} />
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <div>
+            <NavBar />
+            <Route exact path="/home" component={Home} />
             <Route exact path="/califications" component={Califications} />
-          </Switch>
-        </Layout>
+            <Route exact path="/alumnos" component={ListaAlumnos} />
+          </div>
+        </Switch>
       </Router>
     </>
   );
