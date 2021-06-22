@@ -16,7 +16,7 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
     >
       <ModalHeader>
         <div>
-          <h3>Perfil de Alumno N° {AlumnoSeleccionado && AlumnoSeleccionado.expediente}</h3>
+          <h3>Perfil de Alumno</h3>
         </div>
       </ModalHeader>
       <ModalBody>
