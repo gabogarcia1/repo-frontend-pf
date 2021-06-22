@@ -37,7 +37,7 @@ const ModalEditar = ({
             name="nombre"
             value={AlumnoSeleccionado && AlumnoSeleccionado.nombre}
             onChange={handleChange}
-            maxLength="20"
+            maxLength="30"
           />
           <br />
 
@@ -48,7 +48,7 @@ const ModalEditar = ({
             name="apellido"
             value={AlumnoSeleccionado && AlumnoSeleccionado.apellido}
             onChange={handleChange}
-            maxLength="20"
+            maxLength="30"
           />
           <br />
 
