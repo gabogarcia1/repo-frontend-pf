@@ -3,7 +3,7 @@ import logo from "../images/toninHighSchoolLogo.png";
 import "../css/home.css";
 import "font-awesome/css/font-awesome.css";
 import FunctionCard from "../components/FunctionCard";
-import { Row, Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 const Home = () => {
   return (
@@ -37,6 +37,7 @@ const Home = () => {
           <FunctionCard
             title="Agregar docente"
             icon="fa fa-graduation-cap fa-5x"
+            link="/home"
           />
         </Row>
       </div>

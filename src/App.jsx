@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  withRouter,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Layout from "./components/Layout";
 import Califications from "./pages/Califications";
 import ListaAlumnos from "./pages/ListaAlumnos";
 import NavBar from "./components/NavBar";

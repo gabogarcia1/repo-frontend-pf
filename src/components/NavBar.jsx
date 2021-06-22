@@ -43,7 +43,7 @@ const NavBar = () => {
             <div className="d-flex flex-row justify-content-end w-100">
               <Button className="login-btn h-auto p-0">
                 <Link to="/" className="nav-link p-1">
-                  Iniciar sesion
+                  Cerrar sesión
                 </Link>
               </Button>
             </div>
