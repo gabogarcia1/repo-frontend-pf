@@ -1,10 +1,10 @@
-import { render } from "@testing-library/react";
 import React from "react";
 import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import "../css/califications.css";
 import "font-awesome/css/font-awesome.css";
 import SubjetModalAccordion from "./SubjetModalAccordion";
+import "../css/modalCalifications.css";
 
 function SubjetModal(datos) {
   const [show, setShow] = useState(false);
@@ -20,19 +20,31 @@ function SubjetModal(datos) {
         >
           <div className="h5">{datos.materia}</div>
           <div>
-            <i class={datos.class}></i>
+            <i className={datos.className}></i>
           </div>
         </Button>
       </div>
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>{datos.materia}</Modal.Title>
+        <Modal.Header closeButton style={{ backgroundColor: "#f8f9fa" }}>
+          <Modal.Title className="h-100 w-100">
+            <div className="d-flex justify-content-between align-items-center">
+              <div className="">{datos.materia}</div>
+              <div className="modal-icon">
+                <i className={datos.className}></i>
+              </div>
+            </div>
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <h5 className="pb-3">Notas finales</h5>
           <SubjetModalAccordion />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button
+            variant="secondary"
+            className="subjet-modal-btn"
+            onClick={handleClose}
+          >
             Cerrar
           </Button>
         </Modal.Footer>
@@ -40,7 +52,5 @@ function SubjetModal(datos) {
     </>
   );
 }
-
-render(<SubjetModal />);
 
 export default SubjetModal;

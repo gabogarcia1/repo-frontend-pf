@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
+import ModalInfo from "../components/ModalInfo";
+import ModalEditar from "../components/ModalEditar";
+import ModalEliminar from "../components/ModalEliminar";
+import ModalInsertar from "../components/ModalInsertar";
+import TablaAlumnos from "../components/TablaAlumnos";
 import "../css/listaDeAlumnos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
@@ -8,57 +12,69 @@ const ListaAlumnos = () => {
   const dataAlumnos = [
     {
       expediente: 1,
-      nombreyapellido: "Tom Hiddleston ",
+      nombre: "Tom",
+      apellido: "Hiddleston",
       curso: "3° Año",
-      estadodecuota: "Al Dia",
+      estadodecuota: "Cumplido",
       domicilio: "Ecuador 4036",
       contacto: "3816561429",
       dni: "44372965",
+      nacimiento: "09/02/81",
     },
     {
       expediente: 2,
-      nombreyapellido: "Gugu Mbatha-Raw",
+      nombre: "Chris",
+      apellido: "Evans",
       curso: "1° Año",
-      estadodecuota: "Al Dia",
+      estadodecuota: "Cumplido",
       domicilio: "Paraguay 4036",
       contacto: "3816561430",
       dni: "44372966",
+      nacimiento: "13/06/81",
     },
     {
       expediente: 3,
-      nombreyapellido: "Wunmi Mosaku",
+      nombre: "Chris",
+      apellido: "Hemsworth",
       curso: "2° Año",
       estadodecuota: "Retrasado",
       domicilio: "Colombia 4036",
       contacto: "3816561431",
       dni: "44372967",
+      nacimiento: "11/08/83",
     },
     {
       expediente: 4,
-      nombreyapellido: "Eugene Cordero",
+      nombre: "Mark",
+      apellido: "Ruffalo",
       curso: "1° Año",
-      estadodecuota: "Al Dia",
+      estadodecuota: "Cumplido",
       domicilio: "Peru 4036",
       contacto: "3816561432",
       dni: "44372968",
+      nacimiento: "22/11/67",
     },
     {
       expediente: 5,
-      nombreyapellido: "Tara Strong",
+      nombre: "Paul",
+      apellido: "Rudd",
       curso: "3° Año",
       estadodecuota: "Retrasado",
       domicilio: "Chile 4036",
       contacto: "3816561433",
       dni: "44372969",
+      nacimiento: "06/04/69",
     },
     {
       expediente: 6,
-      nombreyapellido: "Owen Wilson",
+      nombre: "Jeremy",
+      apellido: "Renner",
       curso: "4° Año",
-      estadodecuota: "Al Dia",
+      estadodecuota: "Cumplido",
       domicilio: "Brasil 4036",
       contacto: "3816561434",
       dni: "44372970",
+      nacimiento: "07/01/71",
     },
   ];
 
@@ -66,6 +82,7 @@ const ListaAlumnos = () => {
   const [data, setData] = useState(dataAlumnos);
 
   // Controlan cuando se abren y cierran los modales, Esta en falso para que este cerrado hasta que no se lo diga yo
+  const [modalVer, setModalVer] = React.useState(false);
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [modalInsertar, setModalInsertar] = useState(false);
@@ -73,18 +90,31 @@ const ListaAlumnos = () => {
   // Le damos un estado al Alumno seleccionado
   const [AlumnoSeleccionado, setAlumnoSeleccionado] = useState({
     expediente: "",
-    nombreyapellido: "",
+    nombre: "",
+    apellido: "",
     curso: "",
     estadodecuota: "",
     domicilio: "",
     contacto: "",
     dni: "",
+    nacimiento: "",
   });
 
-  // Le indico que modal tiene que abrir, ya sea editar o dar de baja
+  // Le indico que modal tiene que abrir
   const seleccionarAlumno = (elemento, caso) => {
     setAlumnoSeleccionado(elemento);
-    caso === "Editar" ? setModalEditar(true) : setModalEliminar(true);
+    switch (caso) {
+      case "Ver":
+        setModalVer(true);
+        break;
+      case "Editar":
+        setModalEditar(true);
+        break;
+
+      case "Eliminar":
+        setModalEliminar(true);
+        break;
+    }
   };
 
   // Con esto guardo lo que el moderador esta escribiendo en los inputs
@@ -102,17 +132,20 @@ const ListaAlumnos = () => {
     dataNueva.map((alumno) => {
       if (alumno.expediente === AlumnoSeleccionado.expediente) {
         alumno.curso = AlumnoSeleccionado.curso;
-        alumno.nombreyapellido = AlumnoSeleccionado.nombreyapellido;
+        alumno.estadodecuota = AlumnoSeleccionado.estadodecuota;
+        alumno.nombre = AlumnoSeleccionado.nombre;
+        alumno.apellido = AlumnoSeleccionado.apellido;
         alumno.domicilio = AlumnoSeleccionado.domicilio;
         alumno.contacto = AlumnoSeleccionado.contacto;
         alumno.dni = AlumnoSeleccionado.dni;
+        alumno.nacimiento = AlumnoSeleccionado.nacimiento;
       }
     });
     setData(dataNueva);
     setModalEditar(false);
   };
 
-  //Elimina unicamente a los paises que no estan seleccionados
+  //Elimina unicamente a los alumnos que no estan seleccionados
   const eliminar = () => {
     setData(
       data.filter(
@@ -139,12 +172,12 @@ const ListaAlumnos = () => {
   };
 
   return (
-    <div className="App container">
+    <div className="App container mt-2">
       <h2>Lista de Alumnos</h2>
       <hr />
       <div className="botonCrear">
         <button
-          className="btn btn-success"
+          className="btn btn-warning"
           onClick={() => abrirModalInsertar()}
         >
           Crear Perfil de Alumno
@@ -152,228 +185,42 @@ const ListaAlumnos = () => {
       </div>
       <br />
       <br />
-      <table className="table table-bordered text-center">
-        <thead>
-          <tr>
-            <th>N° de Expediente</th>
-            <th>Nombre y Apellio</th>
-            <th>Curso</th>
-            <th>Estado de Cuota</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((elemento) => (
-            <tr>
-              <td>{elemento.expediente}</td>
-              <td>{elemento.nombreyapellido}</td>
-              <td>{elemento.curso}</td>
-              <td>{elemento.estadodecuota}</td>
-              <td>
-                <button
-                  className="btn btn-primary"
-                  aria-hidden="true"
-                  onClick={() => seleccionarAlumno(elemento, "Editar")}
-                >
-                  <i className="fa fa-pencil-square-o"></i>
-                </button>{" "}
-                <button
-                  className="btn btn-danger"
-                  aria-hidden="true"
-                  onClick={() => seleccionarAlumno(elemento, "Eliminar")}
-                >
-                  <i className="fa fa-trash"></i>
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
 
-      <Modal isOpen={modalEditar}>
-        <ModalHeader>
-          <div>
-            <h3>Editar Perfil de Alumno</h3>
-          </div>
-        </ModalHeader>
-        <ModalBody>
-          <div className="form-group">
-            <label>N° de Expediente</label>
-            <input
-              className="form-control"
-              readOnly
-              type="text"
-              name="expediente"
-              value={AlumnoSeleccionado && AlumnoSeleccionado.expediente}
-            />
-            <br />
+      <TablaAlumnos
+        data={data}
+        seleccionarAlumno={seleccionarAlumno}
+        setModalVer={setModalVer}
+      />
 
-            <label>Nombre y Apellido</label>
-            <input
-              className="form-control"
-              type="text"
-              name="nombreyapellido"
-              value={AlumnoSeleccionado && AlumnoSeleccionado.nombreyapellido}
-              onChange={handleChange}
-            />
-            <br />
+      <ModalInfo
+        modalVer={modalVer}
+        setModalVer={setModalVer}
+        AlumnoSeleccionado={AlumnoSeleccionado}
+      />
 
-            <label>Curso</label>
-            <input
-              className="form-control"
-              type="text"
-              name="curso"
-              value={AlumnoSeleccionado && AlumnoSeleccionado.curso}
-              onChange={handleChange}
-            />
-            <br />
+      <ModalEditar
+        modalEditar={modalEditar}
+        setModalEditar={setModalEditar}
+        AlumnoSeleccionado={AlumnoSeleccionado}
+        handleChange={handleChange}
+        editar={editar}
+      />
 
-            <label>Domicilio</label>
-            <input
-              className="form-control"
-              type="text"
-              name="domicilio"
-              value={AlumnoSeleccionado && AlumnoSeleccionado.domicilio}
-              onChange={handleChange}
-            />
-            <br />
+      <ModalEliminar
+        modalEliminar={modalEliminar}
+        setModalEliminar={setModalEliminar}
+        AlumnoSeleccionado={AlumnoSeleccionado}
+        eliminar={eliminar}
+      />
 
-            <label>Contacto</label>
-            <input
-              className="form-control"
-              type="text"
-              name="contacto"
-              value={AlumnoSeleccionado && AlumnoSeleccionado.contacto}
-              onChange={handleChange}
-            />
-            <br />
-
-            <label>DNI</label>
-            <input
-              className="form-control"
-              type="text"
-              name="dni"
-              value={AlumnoSeleccionado && AlumnoSeleccionado.dni}
-              onChange={handleChange}
-            />
-            <br />
-          </div>
-        </ModalBody>
-        <ModalFooter>
-          <button className="btn btn-success" onClick={() => editar()}>
-            Actualizar
-          </button>
-          <button
-            className="btn btn-danger"
-            onClick={() => setModalEditar(false)}
-          >
-            Cancelar
-          </button>
-        </ModalFooter>
-      </Modal>
-
-      <Modal isOpen={modalEliminar}>
-        <ModalBody>
-          Estás Seguro que deseas Dar de Baja al Alumno N°{" "}
-          {AlumnoSeleccionado && AlumnoSeleccionado.expediente}
-        </ModalBody>
-        <ModalFooter>
-          <button className="btn btn-warning" onClick={() => eliminar()}>
-            Aceptar
-          </button>
-          <button
-            className="btn btn-danger"
-            onClick={() => setModalEliminar(false)}
-          >
-            Cancelar
-          </button>
-        </ModalFooter>
-      </Modal>
-
-      <Modal isOpen={modalInsertar}>
-        <ModalHeader>
-          <div>
-            <h3>Nuevo Perfil de Alumno</h3>
-          </div>
-        </ModalHeader>
-        <ModalBody>
-          <div className="form-group">
-            <label>N° de Expediente</label>
-            <input
-              className="form-control"
-              readOnly
-              type="text"
-              name="expediente"
-              //Le suma 1 al numero de expediente anterior
-              value={data[data.length - 1].expediente + 1}
-            />
-            <br />
-
-            <label>Nombre y Apellido</label>
-            <input
-              className="form-control"
-              type="text"
-              name="nombreyapellido"
-              value={
-                AlumnoSeleccionado ? AlumnoSeleccionado.nombreyapellido : ""
-              }
-              onChange={handleChange}
-            />
-            <br />
-
-            <label>Curso</label>
-            <input
-              className="form-control"
-              type="text"
-              name="curso"
-              value={AlumnoSeleccionado ? AlumnoSeleccionado.curso : ""}
-              onChange={handleChange}
-            />
-            <br />
-
-            <label>Domicilio</label>
-            <input
-              className="form-control"
-              type="text"
-              name="domicilio"
-              value={AlumnoSeleccionado && AlumnoSeleccionado.domicilio}
-              onChange={handleChange}
-            />
-            <br />
-
-            <label>Contacto</label>
-            <input
-              className="form-control"
-              type="text"
-              name="contacto"
-              value={AlumnoSeleccionado && AlumnoSeleccionado.contacto}
-              onChange={handleChange}
-            />
-            <br />
-
-            <label>DNI</label>
-            <input
-              className="form-control"
-              type="text"
-              name="dni"
-              value={AlumnoSeleccionado && AlumnoSeleccionado.dni}
-              onChange={handleChange}
-            />
-            <br />
-          </div>
-        </ModalBody>
-        <ModalFooter>
-          <button className="btn btn-success" onClick={() => insertar()}>
-            Crear
-          </button>
-          <button
-            className="btn btn-danger"
-            onClick={() => setModalInsertar(false)}
-          >
-            Cancelar
-          </button>
-        </ModalFooter>
-      </Modal>
+      <ModalInsertar
+        modalInsertar={modalInsertar}
+        setModalInsertar={setModalInsertar}
+        AlumnoSeleccionado={AlumnoSeleccionado}
+        handleChange={handleChange}
+        insertar={insertar}
+        data={data}
+      />
     </div>
   );
 };

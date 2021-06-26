@@ -2,7 +2,7 @@
   color: black;
   width: 100%;
   height: 100%;
-  background-color: rgb(232, 237, 223);
+  background-color: #f8f9fa;
   border: 0px;
 }
 .buttonMateria:hover {
@@ -15,7 +15,7 @@
 }
 
 .contenedor-materia {
-  border: 2px rgba(36, 36, 35, 0.541) solid !important;
+  border: 2px rgba(36, 36, 35, 0.342) solid !important;
 }
 
 .cardMateria {
@@ -26,10 +26,11 @@
 .subjet-icon {
   opacity: 25%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   padding: 0px;
   border: 0px;
+  padding-right: 15px;
 }
 
 .subjet-icon:hover {
@@ -37,12 +38,49 @@
 }
 
 .card-datos-alumno {
-  background-color: rgb(232, 237, 223);
-  border: 2px rgba(36, 36, 35, 0.541) solid !important;
+  background-color: white;
+  border: 2px rgb(245, 203, 92) solid !important;
+  font-size: 1.2rem;
+}
+
+.card-datos-alumno-title {
+  font-size: 2rem;
 }
 
 .perfil-img {
   width: 230px;
   height: 100%;
   border: 2px rgba(36, 36, 35, 0.541) solid !important;
+}
+
+.back-btn {
+  background-color: rgb(245, 203, 92);
+  color: black;
+  border: 1px rgba(41, 41, 41, 0.438) solid;
+}
+
+.back-btn:hover {
+  background-color: rgb(238, 191, 60);
+  border: 1px rgba(41, 41, 41, 0.438) solid;
+}
+
+.back-btn {
+  background-color: rgb(245, 203, 92);
+  color: black;
+  border: 1px rgba(41, 41, 41, 0.438) solid;
+}
+
+.back-btn .fa:hover {
+  color: white;
+  opacity: 100%;
+}
+
+@media only screen and (max-width: 750px) {
+  .perfil-img {
+    width: 50px;
+    height: 50px;
+  }
+  .cardMateria {
+    width: 100%;
+  }
 }
