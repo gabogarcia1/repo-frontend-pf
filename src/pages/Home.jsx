@@ -1,58 +1,46 @@
 import React from "react";
 import logo from "../images/toninHighSchoolLogo.png";
 import "../css/home.css";
+import "font-awesome/css/font-awesome.css";
+import FunctionCard from "../components/FunctionCard";
+import { Row, Col } from "react-bootstrap";
 
 const Home = () => {
   return (
-    <>
-      <div className="row">
-        <div className="col">
-          <div className="container home-container">
-            <div className="row">
-              <div className="col">
-                <div className="card home-card ">
-                  <div className="card-body">
-                    <p className="text-center"> Home </p>
-                  </div>
-                  <img className="logoCampus" src={logo} alt="portada" />
-                </div>
-              </div>
-            </div>
-          </div>
+    <div className="pb-5">
+      <div>
+        <h1 className="text-center pt-5"> Pagina administrativa </h1>
+
+        <div className="text-center">
+          <img className="logoCampus" src={logo} alt="portada" />
         </div>
+        <h2 className="text-center text-danger">
+          Esta pagina es solo apta para uso administrativo
+        </h2>
+        <h2 className="text-center p-5">Funciones</h2>
       </div>
 
-      <div className="card container mt-4">
-        <div className="card-body info">
-          <div className="card tarjeta col-sm col-lg-6">
-            <div className="card-title    text-center">
-              <h5>Datos de contacto</h5>
-            </div>
-            <div className="card-body">
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                itaque fugit distinctio maiores aspernatur, saepe enim. Sapiente
-                officiis esse laborum. Beatae deserunt debitis voluptas laborum
-                delectus saepe error iusto iure!
-              </p>
-            </div>
-          </div>
-          <div className="card tarjeta col-sm col-lg-6">
-            <div className="card-title    text-center ">
-              <h5>Informacion Institucional</h5>
-            </div>
-            <div className="card-body">
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                itaque fugit distinctio maiores aspernatur, saepe enim. Sapiente
-                officiis esse laborum. Beatae deserunt debitis voluptas laborum
-                delectus saepe error iusto iure!
-              </p>
-            </div>
-          </div>
-        </div>
+      <div className="d-flex flex-row justify-content-around">
+        <Row>
+          <FunctionCard
+            title="Lista alumnos"
+            icon="fa fa-user-circle fa-5x"
+            link="/alumnos"
+          />
+
+          <FunctionCard
+            title="Agregar alumnos"
+            icon="fa fa-plus-circle fa-5x home-function-icon"
+            link="/alumnos"
+          />
+
+          <FunctionCard
+            title="Agregar docente"
+            icon="fa fa-graduation-cap fa-5x"
+          />
+        </Row>
       </div>
-    </>
+    </div>
   );
 };
 

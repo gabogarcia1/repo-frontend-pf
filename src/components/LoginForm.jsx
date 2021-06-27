@@ -22,7 +22,9 @@ const LoginForm = () => {
       localStorage.setItem("id", JSON.stringify(user.data.usuario._id));
       localStorage.setItem("usuario", JSON.stringify(user.data.usuario.nombre));
 
-      history.push("./");
+      history.push("./home");
+      console.log("dasddas")
+      
     }
   }, [user, history]);
 

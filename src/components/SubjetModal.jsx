@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import React from "react";
 import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
@@ -21,7 +20,7 @@ function SubjetModal(datos) {
         >
           <div className="h5">{datos.materia}</div>
           <div>
-            <i class={datos.class}></i>
+            <i className={datos.className}></i>
           </div>
         </Button>
       </div>
@@ -31,7 +30,7 @@ function SubjetModal(datos) {
             <div className="d-flex justify-content-between align-items-center">
               <div className="">{datos.materia}</div>
               <div className="modal-icon">
-                <i class={datos.class}></i>
+                <i className={datos.className}></i>
               </div>
             </div>
           </Modal.Title>
