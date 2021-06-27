@@ -19,5 +19,15 @@
 }
 
 .imagenDeAlumno {
-  
+  height: 300px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  background-size: 100% auto;
+  border: 1px solid rgb(245, 203, 92);
+}
+
+.btn {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }

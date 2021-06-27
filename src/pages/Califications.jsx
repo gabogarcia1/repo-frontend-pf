@@ -10,14 +10,14 @@ const Califications = () => {
   return (
     <>
       <div>
-        <div className="container pt-5 d-flex justify-content-center">
-          <div className="pl-4 pr-1">
-            <Link to="/alumnos">
-              <Button className="back-btn">
-                <i className="fa fa-arrow-left" aria-hidden="true"></i>
-              </Button>
-            </Link>
-          </div>
+        <div className="pt-5 container">
+          <Link to="/alumnos">
+            <Button className="back-btn">
+              <i className="fa fa-arrow-left" aria-hidden="true"></i>
+            </Button>
+          </Link>
+        </div>
+        <div className="container d-flex justify-content-center">
           <Card className="card-datos-alumno h-100 w-100">
             <Card.Body className="d-flex justify-content-between">
               <div>
@@ -29,7 +29,7 @@ const Califications = () => {
                 <Card.Text>Apellido:</Card.Text>
               </div>
               <div>
-                <img src={imgPerfil} alt="a" className="perfil-img rounded" />
+                <img src={imgPerfil} alt="a" className="perfil-img" />
               </div>
             </Card.Body>
           </Card>
