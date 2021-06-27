@@ -3,7 +3,7 @@ import logo from "../images/toninHighSchoolLogo.png";
 import "../css/home.css";
 import "font-awesome/css/font-awesome.css";
 import FunctionCard from "../components/FunctionCard";
-import { Row } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 const Home = () => {
   return (
@@ -22,23 +22,28 @@ const Home = () => {
 
       <div className="d-flex flex-row justify-content-around">
         <Row>
-          <FunctionCard
-            title="Lista alumnos"
-            icon="fa fa-user-circle fa-5x"
-            link="/alumnos"
-          />
+          <Col xl={6} className="d-flex justify-content-center pl-0 pr-0">
+            <FunctionCard
+              title="Lista alumnos"
+              icon="fa fa-user-circle fa-5x"
+              link="/alumnos"
+            />
+          </Col>
+          <Col xl={6} className="d-flex justify-content-center pl-0 pr-0">
+            <FunctionCard
+              title="Agregar docente"
+              icon="fa fa-graduation-cap fa-5x"
+              link="/home"
+            />
+          </Col>
 
-          <FunctionCard
-            title="Agregar alumnos"
-            icon="fa fa-plus-circle fa-5x home-function-icon"
-            link="/alumnos"
-          />
-
-          <FunctionCard
-            title="Agregar docente"
-            icon="fa fa-graduation-cap fa-5x"
-            link="/home"
-          />
+          <Col xl={12} className="d-flex justify-content-center pl-0 pr-0">
+            <FunctionCard
+              title="Agregar alumnos"
+              icon="fa fa-plus-circle fa-5x home-function-icon"
+              link="/alumnos"
+            />
+          </Col>
         </Row>
       </div>
     </div>
