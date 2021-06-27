@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ModalInfo from "../components/ModalInfo";
 import ModalEditar from "../components/ModalEditar";
 import ModalEliminar from "../components/ModalEliminar";
 import ModalInsertar from "../components/ModalInsertar";
@@ -12,22 +13,24 @@ const ListaAlumnos = () => {
     {
       expediente: 1,
       nombre: "Tom",
-      apellido: "Hiddleston ",
+      apellido: "Hiddleston",
       curso: "3° Año",
-      estadodecuota: "Al Dia",
+      estadodecuota: "Cumplido",
       domicilio: "Ecuador 4036",
       contacto: "3816561429",
       dni: "44372965",
+      nacimiento: "09/02/81",
     },
     {
       expediente: 2,
       nombre: "Chris",
       apellido: "Evans",
       curso: "1° Año",
-      estadodecuota: "Al Dia",
+      estadodecuota: "Cumplido",
       domicilio: "Paraguay 4036",
       contacto: "3816561430",
       dni: "44372966",
+      nacimiento: "13/06/81",
     },
     {
       expediente: 3,
@@ -38,16 +41,18 @@ const ListaAlumnos = () => {
       domicilio: "Colombia 4036",
       contacto: "3816561431",
       dni: "44372967",
+      nacimiento: "11/08/83",
     },
     {
       expediente: 4,
       nombre: "Mark",
       apellido: "Ruffalo",
       curso: "1° Año",
-      estadodecuota: "Al Dia",
+      estadodecuota: "Cumplido",
       domicilio: "Peru 4036",
       contacto: "3816561432",
       dni: "44372968",
+      nacimiento: "22/11/67",
     },
     {
       expediente: 5,
@@ -58,16 +63,18 @@ const ListaAlumnos = () => {
       domicilio: "Chile 4036",
       contacto: "3816561433",
       dni: "44372969",
+      nacimiento: "06/04/69",
     },
     {
       expediente: 6,
       nombre: "Jeremy",
       apellido: "Renner",
       curso: "4° Año",
-      estadodecuota: "Al Dia",
+      estadodecuota: "Cumplido",
       domicilio: "Brasil 4036",
       contacto: "3816561434",
       dni: "44372970",
+      nacimiento: "07/01/71",
     },
   ];
 
@@ -75,6 +82,7 @@ const ListaAlumnos = () => {
   const [data, setData] = useState(dataAlumnos);
 
   // Controlan cuando se abren y cierran los modales, Esta en falso para que este cerrado hasta que no se lo diga yo
+  const [modalVer, setModalVer] = React.useState(false);
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [modalInsertar, setModalInsertar] = useState(false);
@@ -89,12 +97,24 @@ const ListaAlumnos = () => {
     domicilio: "",
     contacto: "",
     dni: "",
+    nacimiento: "",
   });
 
-  // Le indico que modal tiene que abrir, ya sea editar o dar de baja
+  // Le indico que modal tiene que abrir
   const seleccionarAlumno = (elemento, caso) => {
     setAlumnoSeleccionado(elemento);
-    caso === "Editar" ? setModalEditar(true) : setModalEliminar(true);
+    switch (caso) {
+      case "Ver":
+        setModalVer(true);
+        break;
+      case "Editar":
+        setModalEditar(true);
+        break;
+
+      case "Eliminar":
+        setModalEliminar(true);
+        break;
+    }
   };
 
   // Con esto guardo lo que el moderador esta escribiendo en los inputs
@@ -118,6 +138,7 @@ const ListaAlumnos = () => {
         alumno.domicilio = AlumnoSeleccionado.domicilio;
         alumno.contacto = AlumnoSeleccionado.contacto;
         alumno.dni = AlumnoSeleccionado.dni;
+        alumno.nacimiento = AlumnoSeleccionado.nacimiento;
       }
     });
     setData(dataNueva);
@@ -156,7 +177,7 @@ const ListaAlumnos = () => {
       <hr />
       <div className="botonCrear">
         <button
-          className="btn btn-success"
+          className="btn btn-warning"
           onClick={() => abrirModalInsertar()}
         >
           Crear Perfil de Alumno
@@ -165,7 +186,17 @@ const ListaAlumnos = () => {
       <br />
       <br />
 
-      <TablaAlumnos data={data} seleccionarAlumno={seleccionarAlumno} />
+      <TablaAlumnos
+        data={data}
+        seleccionarAlumno={seleccionarAlumno}
+        setModalVer={setModalVer}
+      />
+
+      <ModalInfo
+        modalVer={modalVer}
+        setModalVer={setModalVer}
+        AlumnoSeleccionado={AlumnoSeleccionado}
+      />
 
       <ModalEditar
         modalEditar={modalEditar}

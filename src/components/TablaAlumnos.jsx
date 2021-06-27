@@ -4,7 +4,7 @@ import "font-awesome/css/font-awesome.css";
 
 const TablaAlumnos = ({ data, seleccionarAlumno }) => {
   return (
-    <table className="table table-bordered text-center">
+    <table className="table table-bordered text-center table-responsive-sm  ">
       <thead>
         <tr>
           <th>N° de Expediente</th>
@@ -24,22 +24,22 @@ const TablaAlumnos = ({ data, seleccionarAlumno }) => {
             <td>{elemento.curso}</td>
             <td>{elemento.estadodecuota}</td>
             <td>
-              {/* <button
-                className="btn btn-info"
+              <button
+                className="btn btn-outline-warning"
                 aria-hidden="true"
                 onClick={() => seleccionarAlumno(elemento, "Ver")}
               >
                 <i class="fa fa-info-circle" aria-hidden="true"></i>
-              </button>{" "} */}
+              </button>{" "}
               <button
-                className="btn btn-warning"
+                className="btn btn-outline-warning"
                 aria-hidden="true"
                 onClick={() => seleccionarAlumno(elemento, "Editar")}
               >
                 <i className="fa fa-pencil-square-o"></i>
               </button>{" "}
               <button
-                className="btn btn-danger"
+                className="btn btn-outline-warning"
                 aria-hidden="true"
                 onClick={() => seleccionarAlumno(elemento, "Eliminar")}
               >

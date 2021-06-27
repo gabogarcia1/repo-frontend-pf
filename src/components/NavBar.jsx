@@ -3,7 +3,6 @@ import { Navbar, Nav, Button } from "react-bootstrap";
 import logo from "../images/toninHighSchoolLogo.png";
 import { Link } from "react-router-dom";
 import "../css/navbar.css";
-
 const NavBar = () => {
   return (
     <>
@@ -20,7 +19,6 @@ const NavBar = () => {
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto d-lg-flex w-100">
             <div className="d-lg-flex flex-lg-row w-100">
@@ -43,7 +41,7 @@ const NavBar = () => {
             <div className="d-flex flex-row justify-content-end w-100">
               <Button className="login-btn h-auto p-0">
                 <Link to="/" className="nav-link p-1">
-                  Iniciar sesion
+                  Cerrar sesión
                 </Link>
               </Button>
             </div>
@@ -53,5 +51,4 @@ const NavBar = () => {
     </>
   );
 };
-
 export default NavBar;

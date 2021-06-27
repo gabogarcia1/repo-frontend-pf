@@ -4,7 +4,7 @@ import qs from "qs";
 //Traer todos los cursos con el limite y desde que registro
 export const getAlumnos = async (desde = 0, limite = 10) => {
   const token=JSON.parse(localStorage.getItem("token")) || '';
-  let url = `http://localhost:3005/alumno`;
+  let url = `https://secret-sierra-67809.herokuapp.com/alumno`;
 
   const options = {
     method: "GET",
