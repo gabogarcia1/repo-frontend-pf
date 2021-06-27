@@ -21,6 +21,7 @@
 .cardMateria {
   width: 60%;
   height: 120px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .subjet-icon {
@@ -41,6 +42,7 @@
   background-color: white;
   border: 2px rgb(245, 203, 92) solid !important;
   font-size: 1.2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .card-datos-alumno-title {
@@ -81,8 +83,8 @@
 
 @media only screen and (max-width: 750px) {
   .perfil-img {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
   }
   .cardMateria {
     width: 100%;
