@@ -29,7 +29,7 @@ const Califications = () => {
                 <Card.Text>Apellido:</Card.Text>
               </div>
               <div>
-                <img src={imgPerfil} alt="a" className="perfil-img rounded" />
+                <img src={imgPerfil} alt="a" className="perfil-img" />
               </div>
             </Card.Body>
           </Card>
