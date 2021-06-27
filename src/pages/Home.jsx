@@ -4,10 +4,11 @@ import "../css/home.css";
 import "font-awesome/css/font-awesome.css";
 import FunctionCard from "../components/FunctionCard";
 import { Row, Col } from "react-bootstrap";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
-    <div className="pb-5">
+    <div className="">
       <div>
         <h1 className="text-center pt-5"> Pagina administrativa </h1>
 
