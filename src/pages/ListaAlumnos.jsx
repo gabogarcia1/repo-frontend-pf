@@ -19,7 +19,7 @@ const ListaAlumnos = () => {
       domicilio: "Ecuador 4036",
       contacto: "3816561429",
       dni: "44372965",
-      nacimiento: "09/02/81",
+      nacimiento: "1981-02-09",
     },
     {
       expediente: 2,
@@ -30,7 +30,7 @@ const ListaAlumnos = () => {
       domicilio: "Paraguay 4036",
       contacto: "3816561430",
       dni: "44372966",
-      nacimiento: "13/06/81",
+      nacimiento: "1981-06-13",
     },
     {
       expediente: 3,
@@ -41,7 +41,7 @@ const ListaAlumnos = () => {
       domicilio: "Colombia 4036",
       contacto: "3816561431",
       dni: "44372967",
-      nacimiento: "11/08/83",
+      nacimiento: "1983-08-11",
     },
     {
       expediente: 4,
@@ -52,7 +52,7 @@ const ListaAlumnos = () => {
       domicilio: "Peru 4036",
       contacto: "3816561432",
       dni: "44372968",
-      nacimiento: "22/11/67",
+      nacimiento: "1967-11-22",
     },
     {
       expediente: 5,
@@ -63,7 +63,7 @@ const ListaAlumnos = () => {
       domicilio: "Chile 4036",
       contacto: "3816561433",
       dni: "44372969",
-      nacimiento: "06/04/69",
+      nacimiento: "1969-04-06",
     },
     {
       expediente: 6,
@@ -74,7 +74,7 @@ const ListaAlumnos = () => {
       domicilio: "Brasil 4036",
       contacto: "3816561434",
       dni: "44372970",
-      nacimiento: "07/01/71",
+      nacimiento: "1971-01-07",
     },
   ];
 

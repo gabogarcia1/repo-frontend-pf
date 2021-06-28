@@ -156,7 +156,11 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
             </Row>
           </div>
           <div className="d-flex justify-content-center align-items-center pb-3 pl-3">
-            <img src={imagenDefault} thumbnail className="border-img imagenDeAlumno" />
+            <img
+              src={imagenDefault}
+              thumbnail
+              className="border-img imagenDeAlumno"
+            />
           </div>
         </div>
       </ModalBody>
