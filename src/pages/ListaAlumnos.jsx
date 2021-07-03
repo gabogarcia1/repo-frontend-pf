@@ -177,7 +177,7 @@ const ListaAlumnos = () => {
       <hr />
       <div className="botonCrear">
         <button
-          className="btn btn-warning"
+          className="btn btn-warning text-white"
           onClick={() => abrirModalInsertar()}
         >
           Crear Perfil de Alumno

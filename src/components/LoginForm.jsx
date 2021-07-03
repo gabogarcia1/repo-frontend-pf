@@ -22,7 +22,7 @@ const LoginForm = () => {
       localStorage.setItem("id", JSON.stringify(user.data.usuario._id));
       localStorage.setItem("usuario", JSON.stringify(user.data.usuario.nombre));
 
-      history.push("./");
+      history.push("./home");
     }
   }, [user, history]);
 
@@ -52,62 +52,51 @@ const LoginForm = () => {
 
   return (
     <>
-      
-          
-              <form onSubmit={handleSubmit} id="btnSubmit">
-                <div className="form-group">
-                  <label className="text-muted" for="email">
-                    Correo electrónico
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Ingrese su correo electrónico"
-                    className="form-control"
-                    id="email"
-                    name="email"
-                    aria-describedby="emailHelp"
-                    autocomplete="off"
-                    value={formValues.email}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="form-group">
-                  <label for="password" className="text-muted">
-                    Contraseña
-                  </label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    name="password"
-                    value={formValues.password}
-                    onChange={handleChange}
-                    id="password"
-                    placeholder="Ingrese su contraseña"
-                    required
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="btn btn-warning btn-block ingresar"
-                  disabled={user.loading}
-                >
-                  Iniciar
-                </button>
-                <Link>
-                  <p className="mt-4">Olvidaste tu contraseña?</p>
-                </Link>
-              </form>
-              {user.data.ok === false && (
-                <div
-                  className="alert alert-danger mt-3 text-center"
-                  role="alert"
-                >
-                  {user.data.err.message}
-                </div>
-              )}
-            
-        
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label for="email">Correo electrónico</label>
+          <input
+            type="email"
+            placeholder="Ingrese su correo electrónico"
+            className="form-control"
+            name="email"
+            value={formValues.email}
+            onChange={handleChange}
+            aria-describedby="emailHelp"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label for="password">Contraseña</label>
+          <input
+            type="password"
+            className="form-control"
+            name="password"
+            value={formValues.password}
+            onChange={handleChange}
+            placeholder="Ingrese su contraseña"
+          />
+        </div>
+        <button
+          type="submit"
+          className="btn btn-warning btn-block ingresar"
+          disabled={user.loading}
+        >
+          Iniciar
+        </button>
+        <Link>
+          <p className="mt-4">Olvidaste tu contraseña?</p>
+        </Link>
+        {/* <button className="btn btn-info btn-block registrarse">
+                <a href="">Registrarse</a>
+              </button> */}
+      </form>
+      {user.data.ok === false && (
+        <div className="alert alert-danger mt-3 text-center" role="alert">
+          {user.data.err.message}
+        </div>
+      )}
     </>
   );
 };

@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Califications from "./pages/Califications";
 import ListaAlumnos from "./pages/ListaAlumnos";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Route exact path="/home" component={Home} />
             <Route exact path="/califications" component={Califications} />
             <Route exact path="/alumnos" component={ListaAlumnos} />
+            <Footer />
           </div>
         </Switch>
       </Router>
