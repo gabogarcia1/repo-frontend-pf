@@ -18,11 +18,15 @@ const Alumno = () => {
   }, []);
 
   // console.log(alumnos);
-  console.log(alumnos.data.alumnos);
+  // console.log(alumnos.data.alumnos);
+
+  let dataAlumnos;
+  [dataAlumnos] = [alumnos.data.alumnos];
+  console.log(dataAlumnos);
 
   return (
     <div>
-      <h1>Hellow World</h1>
+      <h1>Hello World</h1>
     </div>
   );
 };
