@@ -16,7 +16,7 @@ export const getAlumnos = async (desde = 0, limite = 10) => {
   try {
     const resp = await axios(url, options);
     const { data } = resp;
-    console.log(data)
+    // console.log(data)
     return data;
   } catch (error) {
     return {

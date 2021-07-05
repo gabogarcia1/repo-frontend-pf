@@ -16,10 +16,15 @@ const Alumno = () => {
       });
     });
   }, []);
-console.log(alumnos)
-  return <div>
-  
-  </div>;
+
+  // console.log(alumnos);
+  console.log(alumnos.data.alumnos);
+
+  return (
+    <div>
+      <h1>Hellow World</h1>
+    </div>
+  );
 };
 
 export default Alumno;

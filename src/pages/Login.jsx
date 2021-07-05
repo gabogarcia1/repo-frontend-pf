@@ -1,6 +1,5 @@
 import React from "react";
 import LoginForm from "../components/LoginForm";
-
 import "../css/login.css";
 
 const Login = () => {
@@ -11,7 +10,6 @@ const Login = () => {
           <div className="col col-md-6 offset-md-3 box formulario">
             <h1 className="mt-3">Iniciar Sesion</h1>
             <LoginForm />
-            {/* <div className="mt-3"></div> */}
           </div>
         </div>
       </div>
