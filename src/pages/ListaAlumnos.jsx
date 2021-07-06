@@ -10,75 +10,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
 
 const ListaAlumnos = () => {
-  // const dataAlumnos = [
-  //   {
-  //     expediente: 1,
-  //     nombre: "Tom",
-  //     apellido: "Hiddleston",
-  //     curso: "3° Año",
-  //     estadodecuota: "Cumplido",
-  //     domicilio: "Ecuador 4036",
-  //     contacto: "3816561429",
-  //     dni: "44372965",
-  //     nacimiento: "1981-02-09",
-  //   },
-  //   {
-  //     expediente: 2,
-  //     nombre: "Chris",
-  //     apellido: "Evans",
-  //     curso: "1° Año",
-  //     estadodecuota: "Cumplido",
-  //     domicilio: "Paraguay 4036",
-  //     contacto: "3816561430",
-  //     dni: "44372966",
-  //     nacimiento: "1981-06-13",
-  //   },
-  //   {
-  //     expediente: 3,
-  //     nombre: "Chris",
-  //     apellido: "Hemsworth",
-  //     curso: "2° Año",
-  //     estadodecuota: "Retrasado",
-  //     domicilio: "Colombia 4036",
-  //     contacto: "3816561431",
-  //     dni: "44372967",
-  //     nacimiento: "1983-08-11",
-  //   },
-  //   {
-  //     expediente: 4,
-  //     nombre: "Mark",
-  //     apellido: "Ruffalo",
-  //     curso: "1° Año",
-  //     estadodecuota: "Cumplido",
-  //     domicilio: "Peru 4036",
-  //     contacto: "3816561432",
-  //     dni: "44372968",
-  //     nacimiento: "1967-11-22",
-  //   },
-  //   {
-  //     expediente: 5,
-  //     nombre: "Paul",
-  //     apellido: "Rudd",
-  //     curso: "3° Año",
-  //     estadodecuota: "Retrasado",
-  //     domicilio: "Chile 4036",
-  //     contacto: "3816561433",
-  //     dni: "44372969",
-  //     nacimiento: "1969-04-06",
-  //   },
-  //   {
-  //     expediente: 6,
-  //     nombre: "Jeremy",
-  //     apellido: "Renner",
-  //     curso: "4° Año",
-  //     estadodecuota: "Cumplido",
-  //     domicilio: "Brasil 4036",
-  //     contacto: "3816561434",
-  //     dni: "44372970",
-  //     nacimiento: "1971-01-07",
-  //   },
-  // ];
-
   const [alumnos, setAlumnos] = useState({
     data: {},
     loading: true,
@@ -87,9 +18,10 @@ const ListaAlumnos = () => {
   useEffect(() => {
     getAlumnos().then((datos) => {
       setAlumnos({
-        data: datos,
+        data: datos.alumnos,
         loading: false,
       });
+      console.log(datos.alumnos);
     });
   }, []);
 
@@ -205,11 +137,13 @@ const ListaAlumnos = () => {
       <br />
       <br />
 
-      <TablaAlumnos
-        data={data}
-        seleccionarAlumno={seleccionarAlumno}
-        setModalVer={setModalVer}
-      />
+      {alumnos.loading === false && (
+        <TablaAlumnos
+          data={alumnos.data}
+          seleccionarAlumno={seleccionarAlumno}
+          setModalVer={setModalVer}
+        />
+      )}
 
       <ModalInfo
         modalVer={modalVer}

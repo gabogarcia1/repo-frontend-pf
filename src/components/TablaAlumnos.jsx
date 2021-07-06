@@ -3,6 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
 
 const TablaAlumnos = ({ data, seleccionarAlumno }) => {
+
+
+  
   return (
     <table className="table table-bordered text-center table-responsive-sm  ">
       <thead>
@@ -17,11 +20,11 @@ const TablaAlumnos = ({ data, seleccionarAlumno }) => {
       <tbody>
         {data.map((elemento) => (
           <tr>
-            <td>{elemento.expediente}</td>
+            <td>{elemento.nroexpediente}</td>
             <td>
               {elemento.nombre} {elemento.apellido}
             </td>
-            <td>{elemento.curso}</td>
+            <td>{elemento.aniocursado}</td>
             <td>{elemento.estadodecuota}</td>
             <td>
               <button
