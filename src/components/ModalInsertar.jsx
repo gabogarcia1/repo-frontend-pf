@@ -111,9 +111,9 @@ const ModalInsertar = ({
             <label>Fecha de Nacimiento</label>
             <input
               className="form-control"
-              type="date"
-              min="1920-01-01"
-              max="2011-12-31"
+              type="text"
+              // min="1920-01-01"
+              // max="2011-12-31"
               name="nacimiento"
               value={AlumnoSeleccionado && AlumnoSeleccionado.nacimiento}
               onChange={handleChange}

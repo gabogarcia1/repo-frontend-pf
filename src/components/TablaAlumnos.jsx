@@ -3,9 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
 
 const TablaAlumnos = ({ data, seleccionarAlumno }) => {
-
-
-  
   return (
     <table className="table table-bordered text-center table-responsive-sm  ">
       <thead>

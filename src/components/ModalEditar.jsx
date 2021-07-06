@@ -107,10 +107,10 @@ const ModalEditar = ({
           <label>Fecha de Nacimiento</label>
           <input
             className="form-control"
-            type="date"
+            type="text"
             name="nacimiento"
-            min="1920-01-01"
-            max="2011-12-31"
+            // min="1920-01-01"
+            // max="2011-12-31"
             value={AlumnoSeleccionado && AlumnoSeleccionado.nacimiento}
             onChange={handleChange}
             maxLength="20"
