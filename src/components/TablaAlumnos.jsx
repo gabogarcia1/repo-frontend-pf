@@ -25,7 +25,7 @@ const TablaAlumnos = ({ data, seleccionarAlumno }) => {
               {elemento.nombre} {elemento.apellido}
             </td>
             <td>{elemento.aniocursado}</td>
-            <td>{elemento.estadodecuota}</td>
+            <td>{elemento.cuotaaldia}</td>
             <td>
               <button
                 className="btn btn-outline-warning"

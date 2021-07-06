@@ -57,7 +57,7 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
                       type="text"
                       name="expediente"
                       value={
-                        AlumnoSeleccionado && AlumnoSeleccionado.expediente
+                        AlumnoSeleccionado && AlumnoSeleccionado.nroexpediente
                       }
                     />
                   </ListGroup>
@@ -122,7 +122,7 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
                       readOnly
                       type="text"
                       name="curso"
-                      value={AlumnoSeleccionado && AlumnoSeleccionado.curso}
+                      value={AlumnoSeleccionado && AlumnoSeleccionado.aniocursado}
                     />
                   </ListGroup>
                 </Col>
@@ -135,9 +135,9 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
                     <input
                       className="form-control input-style"
                       readOnly
-                      type="text"
+                      type="email"
                       name="contacto"
-                      value={AlumnoSeleccionado && AlumnoSeleccionado.contacto}
+                      value={AlumnoSeleccionado && AlumnoSeleccionado.email}
                     />
                   </ListGroup>
                 </Col>

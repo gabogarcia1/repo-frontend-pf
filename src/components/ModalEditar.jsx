@@ -24,7 +24,7 @@ const ModalEditar = ({
             readOnly
             type="text"
             name="expediente"
-            value={AlumnoSeleccionado && AlumnoSeleccionado.expediente}
+            value={AlumnoSeleccionado && AlumnoSeleccionado.nroexpediente}
             maxLength="20"
           />
           <br />
@@ -56,7 +56,7 @@ const ModalEditar = ({
             className="form-control"
             type="text"
             name="curso"
-            value={AlumnoSeleccionado && AlumnoSeleccionado.curso}
+            value={AlumnoSeleccionado && AlumnoSeleccionado.aniocursado}
             onChange={handleChange}
             maxLength="20"
           />
@@ -87,9 +87,9 @@ const ModalEditar = ({
           <label>Contacto</label>
           <input
             className="form-control"
-            type="number"
+            type="email"
             name="contacto"
-            value={AlumnoSeleccionado && AlumnoSeleccionado.contacto}
+            value={AlumnoSeleccionado && AlumnoSeleccionado.email}
             onChange={handleChange}
           />
           <br />

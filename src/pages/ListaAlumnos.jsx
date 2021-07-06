@@ -115,7 +115,7 @@ const ListaAlumnos = () => {
   //Crean un nuevo perfil de alumno
   const insertar = () => {
     var valorInsertar = AlumnoSeleccionado;
-    valorInsertar.expediente = data[data.length - 1].expediente + 1;
+    valorInsertar.nroexpediente = data[data.length - 1].expediente + 1;
     var dataNueva = data;
     dataNueva.push(valorInsertar);
     setData(dataNueva);
@@ -172,7 +172,7 @@ const ListaAlumnos = () => {
         AlumnoSeleccionado={AlumnoSeleccionado}
         handleChange={handleChange}
         insertar={insertar}
-        data={data}
+        data={alumnos.data}
       />
     </div>
   );

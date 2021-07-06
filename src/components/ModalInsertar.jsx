@@ -29,7 +29,7 @@ const ModalInsertar = ({
               type="text"
               name="expediente"
               maxLength="30"
-              // value={data[data.length - 1].expediente + 1}
+              value="El numero de expediente del nuevo alumno se generara automaticamente"
             />
             <br />
 
