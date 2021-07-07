@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { getAlumnos } from "../helpers/rutaAlumnos";
+import { getAlumnos, addAlumno } from "../helpers/rutaAlumnos";
 import ModalInfo from "../components/ModalInfo";
 import ModalEditar from "../components/ModalEditar";
 import ModalEliminar from "../components/ModalEliminar";
 import ModalInsertar from "../components/ModalInsertar";
 import TablaAlumnos from "../components/TablaAlumnos";
+import axios from "axios";
 import "../css/listaDeAlumnos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
@@ -40,15 +41,15 @@ const ListaAlumnos = () => {
 
   // Le damos un estado al Alumno seleccionado
   const [AlumnoSeleccionado, setAlumnoSeleccionado] = useState({
-    expediente: "",
+    nroexpediente: "",
     nombre: "",
     apellido: "",
-    curso: "",
-    estadodecuota: "",
+    aniocursado: "",
+    // estadodecuota: "",
     domicilio: "",
     contacto: "",
     dni: "",
-    nacimiento: "",
+    diafechanac: "",
   });
 
   // Le indico que modal tiene que abrir
@@ -113,13 +114,33 @@ const ListaAlumnos = () => {
   };
 
   //Crean un nuevo perfil de alumno
-  const insertar = () => {
-    var valorInsertar = AlumnoSeleccionado;
-    valorInsertar.nroexpediente = data[data.length - 1].expediente + 1;
-    var dataNueva = data;
-    dataNueva.push(valorInsertar);
-    setData(dataNueva);
-    setModalInsertar(false);
+  const insertar = async () => {
+    const token = JSON.parse(localStorage.getItem("token")) || "";
+    let url = "https://secret-sierra-67809.herokuapp.com/alumno";
+    console.log(JSON.stringify(AlumnoSeleccionado));
+    const alumno = AlumnoSeleccionado;
+
+    const options = {
+      method: "POST",
+      body: JSON.stringify(alumno),
+      headers: {
+        "Content-Type": "application/json",
+        // token: token,
+      },
+      // data: qs.stringify(AlumnoSeleccionado),
+    };
+    try {
+      const resp = await axios(url, options);
+      const { data } = resp;
+      console.log(data);
+      return data;
+    } catch (error) {
+      console.log(error.response.data);
+      return {
+        data: error.response.data,
+        loading: false,
+      };
+    }
   };
 
   return (
@@ -145,34 +166,40 @@ const ListaAlumnos = () => {
         />
       )}
 
+      {alumnos.loading === false && (
+        <ModalEditar
+          modalEditar={modalEditar}
+          setModalEditar={setModalEditar}
+          AlumnoSeleccionado={AlumnoSeleccionado}
+          handleChange={handleChange}
+          editar={editar}
+        />
+      )}
+
+      {alumnos.loading === false && (
+        <ModalEliminar
+          modalEliminar={modalEliminar}
+          setModalEliminar={setModalEliminar}
+          AlumnoSeleccionado={AlumnoSeleccionado}
+          eliminar={eliminar}
+        />
+      )}
+
+      {alumnos.loading === false && (
+        <ModalInsertar
+          modalInsertar={modalInsertar}
+          setModalInsertar={setModalInsertar}
+          AlumnoSeleccionado={AlumnoSeleccionado}
+          handleChange={handleChange}
+          insertar={insertar}
+          data={data}
+        />
+      )}
+
       <ModalInfo
         modalVer={modalVer}
         setModalVer={setModalVer}
         AlumnoSeleccionado={AlumnoSeleccionado}
-      />
-
-      <ModalEditar
-        modalEditar={modalEditar}
-        setModalEditar={setModalEditar}
-        AlumnoSeleccionado={AlumnoSeleccionado}
-        handleChange={handleChange}
-        editar={editar}
-      />
-
-      <ModalEliminar
-        modalEliminar={modalEliminar}
-        setModalEliminar={setModalEliminar}
-        AlumnoSeleccionado={AlumnoSeleccionado}
-        eliminar={eliminar}
-      />
-
-      <ModalInsertar
-        modalInsertar={modalInsertar}
-        setModalInsertar={setModalInsertar}
-        AlumnoSeleccionado={AlumnoSeleccionado}
-        handleChange={handleChange}
-        insertar={insertar}
-        data={alumnos.data}
       />
     </div>
   );

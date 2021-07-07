@@ -15,7 +15,7 @@ const ModalEliminar = ({
       <Modal isOpen={modalEliminar}>
         <ModalBody>
           Estás Seguro que deseas Dar de Baja al Alumno N°{" "}
-          {AlumnoSeleccionado && AlumnoSeleccionado.expediente}
+          {AlumnoSeleccionado && AlumnoSeleccionado.nroexpediente}
         </ModalBody>
         <ModalFooter>
           <button className="btn btn-warning" onClick={() => eliminar()}>

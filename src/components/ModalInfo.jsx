@@ -74,9 +74,9 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
                       className="form-control input-style"
                       readOnly
                       type="text"
-                      name="nacimiento"
+                      name="diafechanac"
                       value={
-                        AlumnoSeleccionado && AlumnoSeleccionado.nacimiento
+                        AlumnoSeleccionado && AlumnoSeleccionado.diafechanac
                       }
                     />
                   </ListGroup>

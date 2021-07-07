@@ -22,7 +22,13 @@ const TablaAlumnos = ({ data, seleccionarAlumno }) => {
               {elemento.nombre} {elemento.apellido}
             </td>
             <td>{elemento.aniocursado}</td>
-            <td>{elemento.cuotaaldia}</td>
+            <td>
+              {elemento.cuotaaldia ? (
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+              ) : (
+                <i class="fa fa-times-circle" aria-hidden="true"></i>
+              )}
+            </td>
             <td>
               <button
                 className="btn btn-outline-warning"

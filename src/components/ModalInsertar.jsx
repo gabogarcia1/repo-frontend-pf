@@ -25,11 +25,11 @@ const ModalInsertar = ({
             <label>N° de Expediente</label>
             <input
               className="form-control"
-              readOnly
-              type="text"
+              type="number"
               name="expediente"
               maxLength="30"
-              value="El numero de expediente del nuevo alumno se generara automaticamente"
+              value={AlumnoSeleccionado ? AlumnoSeleccionado.nroexpediente : ""}
+              onChange={handleChange}
             />
             <br />
 
@@ -61,7 +61,7 @@ const ModalInsertar = ({
               type="text"
               name="curso"
               maxLength="30"
-              value={AlumnoSeleccionado ? AlumnoSeleccionado.curso : ""}
+              value={AlumnoSeleccionado ? AlumnoSeleccionado.aniocursado : ""}
               onChange={handleChange}
             />
             <br />
@@ -70,9 +70,9 @@ const ModalInsertar = ({
             <input
               className="form-control"
               type="text"
-              name="estadodecuota"
+              name="cuotaaldia"
               maxLength="30"
-              value={AlumnoSeleccionado ? AlumnoSeleccionado.estadodecuota : ""}
+              value={AlumnoSeleccionado ? AlumnoSeleccionado.cuotaaldia : ""}
               onChange={handleChange}
             />
             <br />
@@ -88,12 +88,12 @@ const ModalInsertar = ({
             />
             <br />
 
-            <label>Contacto</label>
+            <label>Email</label>
             <input
               className="form-control"
-              type="number"
-              name="contacto"
-              value={AlumnoSeleccionado && AlumnoSeleccionado.contacto}
+              type="email"
+              name="email"
+              value={AlumnoSeleccionado && AlumnoSeleccionado.email}
               onChange={handleChange}
             />
             <br />
@@ -112,8 +112,6 @@ const ModalInsertar = ({
             <input
               className="form-control"
               type="text"
-              // min="1920-01-01"
-              // max="2011-12-31"
               name="nacimiento"
               value={AlumnoSeleccionado && AlumnoSeleccionado.nacimiento}
               onChange={handleChange}
