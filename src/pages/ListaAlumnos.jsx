@@ -90,7 +90,7 @@ const ListaAlumnos = () => {
         alumno.domicilio = AlumnoSeleccionado.domicilio;
         alumno.email = AlumnoSeleccionado.email;
         alumno.dni = AlumnoSeleccionado.dni;
-        alumno.nacimiento = AlumnoSeleccionado.nacimiento;
+        alumno.diafechanac = AlumnoSeleccionado.diafechanac;
       }
     });
     setData(dataNueva);
