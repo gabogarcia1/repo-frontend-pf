@@ -25,9 +25,9 @@ const ModalInsertar = ({
             <label>N° de Expediente</label>
             <input
               className="form-control"
-              type="number"
+              type="text"
+              maxLength="20"
               name="expediente"
-              maxLength="30"
               value={AlumnoSeleccionado ? AlumnoSeleccionado.nroexpediente : ""}
               onChange={handleChange}
             />
@@ -37,8 +37,8 @@ const ModalInsertar = ({
             <input
               className="form-control"
               type="text"
+              maxLength="20"
               name="nombre"
-              maxLength="30"
               value={AlumnoSeleccionado ? AlumnoSeleccionado.nombre : ""}
               onChange={handleChange}
             />
@@ -48,8 +48,8 @@ const ModalInsertar = ({
             <input
               className="form-control"
               type="text"
+              maxLength="20"
               name="apellido"
-              maxLength="30"
               value={AlumnoSeleccionado ? AlumnoSeleccionado.apellido : ""}
               onChange={handleChange}
             />
@@ -59,8 +59,8 @@ const ModalInsertar = ({
             <input
               className="form-control"
               type="text"
+              maxLength="20"
               name="curso"
-              maxLength="30"
               value={AlumnoSeleccionado ? AlumnoSeleccionado.aniocursado : ""}
               onChange={handleChange}
             />
@@ -70,8 +70,8 @@ const ModalInsertar = ({
             <input
               className="form-control"
               type="text"
+              maxLength="20"
               name="cuotaaldia"
-              maxLength="30"
               value={AlumnoSeleccionado ? AlumnoSeleccionado.cuotaaldia : ""}
               onChange={handleChange}
             />
@@ -81,8 +81,8 @@ const ModalInsertar = ({
             <input
               className="form-control"
               type="text"
+              maxLength="20"
               name="domicilio"
-              maxLength="30"
               value={AlumnoSeleccionado && AlumnoSeleccionado.domicilio}
               onChange={handleChange}
             />
@@ -91,7 +91,8 @@ const ModalInsertar = ({
             <label>Email</label>
             <input
               className="form-control"
-              type="email"
+              type="text"
+              maxLength="20"
               name="email"
               value={AlumnoSeleccionado && AlumnoSeleccionado.email}
               onChange={handleChange}
@@ -101,7 +102,8 @@ const ModalInsertar = ({
             <label>DNI</label>
             <input
               className="form-control"
-              type="number"
+              type="text"
+              maxLength="20"
               name="dni"
               value={AlumnoSeleccionado && AlumnoSeleccionado.dni}
               onChange={handleChange}
@@ -112,8 +114,9 @@ const ModalInsertar = ({
             <input
               className="form-control"
               type="text"
+              maxLength="20"
               name="nacimiento"
-              value={AlumnoSeleccionado && AlumnoSeleccionado.nacimiento}
+              value={AlumnoSeleccionado && AlumnoSeleccionado.diafechanac}
               onChange={handleChange}
             />
             <br />

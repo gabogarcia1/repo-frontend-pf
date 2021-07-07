@@ -44,7 +44,6 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
                   </ListGroup>
                 </Col>
               </Row>
-
               <Row className="align-items-start">
                 <Col xs="auto">
                   <ListGroup variant="flush">
@@ -63,7 +62,6 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
                   </ListGroup>
                 </Col>
               </Row>
-
               <Row className="align-items-start">
                 <Col xs="auto">
                   <ListGroup variant="flush">
@@ -82,7 +80,6 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
                   </ListGroup>
                 </Col>
               </Row>
-
               <Row className="align-items-start">
                 <Col xs="auto">
                   <ListGroup variant="flush">
@@ -122,12 +119,13 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
                       readOnly
                       type="text"
                       name="curso"
-                      value={AlumnoSeleccionado && AlumnoSeleccionado.aniocursado}
+                      value={
+                        AlumnoSeleccionado && AlumnoSeleccionado.aniocursado
+                      }
                     />
                   </ListGroup>
                 </Col>
               </Row>
-
               <Row className="align-items-start">
                 <Col xs="auto">
                   <ListGroup variant="flush">
@@ -142,7 +140,6 @@ const ModalInfo = ({ modalVer, setModalVer, AlumnoSeleccionado }) => {
                   </ListGroup>
                 </Col>
               </Row>
-
               <Row className="align-items-start">
                 <Col xs="auto">
                   <ListGroup variant="flush">
