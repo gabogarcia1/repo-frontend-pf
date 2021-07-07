@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getAlumnos, addAlumno } from "../helpers/rutaAlumnos";
+import { getAlumnos } from "../helpers/rutaAlumnos";
 import ModalInfo from "../components/ModalInfo";
 import ModalEditar from "../components/ModalEditar";
 import ModalEliminar from "../components/ModalEliminar";
@@ -45,9 +45,9 @@ const ListaAlumnos = () => {
     nombre: "",
     apellido: "",
     aniocursado: "",
-    // estadodecuota: "",
+    cuotaaldia: "",
     domicilio: "",
-    contacto: "",
+    email: "",
     dni: "",
     diafechanac: "",
   });
@@ -82,13 +82,13 @@ const ListaAlumnos = () => {
   const editar = () => {
     var dataNueva = data;
     dataNueva.map((alumno) => {
-      if (alumno.expediente === AlumnoSeleccionado.expediente) {
-        alumno.curso = AlumnoSeleccionado.curso;
-        alumno.estadodecuota = AlumnoSeleccionado.estadodecuota;
+      if (alumno.nroexpediente === AlumnoSeleccionado.nroexpediente) {
+        alumno.aniocursado = AlumnoSeleccionado.aniocursado;
+        alumno.cuotaaldia = AlumnoSeleccionado.cuotaaldia;
         alumno.nombre = AlumnoSeleccionado.nombre;
         alumno.apellido = AlumnoSeleccionado.apellido;
         alumno.domicilio = AlumnoSeleccionado.domicilio;
-        alumno.contacto = AlumnoSeleccionado.contacto;
+        alumno.email = AlumnoSeleccionado.email;
         alumno.dni = AlumnoSeleccionado.dni;
         alumno.nacimiento = AlumnoSeleccionado.nacimiento;
       }
@@ -101,7 +101,7 @@ const ListaAlumnos = () => {
   const eliminar = () => {
     setData(
       data.filter(
-        (alumno) => alumno.expediente !== AlumnoSeleccionado.expediente
+        (alumno) => alumno.nroexpediente !== AlumnoSeleccionado.nroexpediente
       )
     );
     setModalEliminar(false);
@@ -196,11 +196,13 @@ const ListaAlumnos = () => {
         />
       )}
 
-      <ModalInfo
-        modalVer={modalVer}
-        setModalVer={setModalVer}
-        AlumnoSeleccionado={AlumnoSeleccionado}
-      />
+      {alumnos.loading === false && (
+        <ModalInfo
+          modalVer={modalVer}
+          setModalVer={setModalVer}
+          AlumnoSeleccionado={AlumnoSeleccionado}
+        />
+      )}
     </div>
   );
 };
