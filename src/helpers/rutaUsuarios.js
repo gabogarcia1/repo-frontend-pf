@@ -1,9 +1,11 @@
 import axios from "axios";
 import qs from "qs";
 
-export const postLogin = async (datos) => {
-  const url = `https://secret-sierra-67809.herokuapp.com/login`;
+const urlLocal = "http://localhost:3005/usuarios";
 
+export const postLogin = async (datos) => {
+  // const url = `https://secret-sierra-67809.herokuapp.com/login`;
+  const url = `${urlLocal}/login`;
   const options = {
     method: "POST",
     headers: { "content-type": "application/x-www-form-urlencoded" },

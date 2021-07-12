@@ -12,6 +12,7 @@ const ModalInsertar = ({
   insertar,
   data,
 }) => {
+  // console.log(AlumnoSeleccionado);
   return (
     <>
       <Modal isOpen={modalInsertar}>
@@ -27,7 +28,7 @@ const ModalInsertar = ({
               className="form-control"
               type="text"
               maxLength="20"
-              name="expediente"
+              name="nroexpediente"
               value={AlumnoSeleccionado ? AlumnoSeleccionado.nroexpediente : ""}
               onChange={handleChange}
             />
@@ -60,7 +61,7 @@ const ModalInsertar = ({
               className="form-control"
               type="text"
               maxLength="20"
-              name="curso"
+              name="aniocursado"
               value={AlumnoSeleccionado ? AlumnoSeleccionado.aniocursado : ""}
               onChange={handleChange}
             />
@@ -115,7 +116,7 @@ const ModalInsertar = ({
               className="form-control"
               type="text"
               maxLength="20"
-              name="nacimiento"
+              name="diafechanac"
               value={AlumnoSeleccionado && AlumnoSeleccionado.diafechanac}
               onChange={handleChange}
             />

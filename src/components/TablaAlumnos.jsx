@@ -16,7 +16,7 @@ const TablaAlumnos = ({ data, seleccionarAlumno }) => {
       </thead>
       <tbody>
         {data.map((elemento) => (
-          <tr>
+          <tr key={elemento._id}>
             <td>{elemento.nroexpediente}</td>
             <td>
               {elemento.nombre} {elemento.apellido}

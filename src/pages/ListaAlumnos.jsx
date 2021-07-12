@@ -12,29 +12,31 @@ import "font-awesome/css/font-awesome.css";
 
 const ListaAlumnos = () => {
   const [alumnos, setAlumnos] = useState({
-    data: {},
+    data: [],
     loading: true,
   });
 
+  // A la constate data le asigno el valor que tiene en dataAlumnos
+  const [data, setData] = useState(alumnos.data);
+
   useEffect(() => {
     getAlumnos().then((datos) => {
+      console.log(datos);
       setAlumnos({
-        data: datos.alumnos,
+        data: datos,
         loading: false,
       });
-      console.log(datos.alumnos);
     });
   }, []);
 
-  let dataAlumnos;
-  [dataAlumnos] = [alumnos.data.alumnos];
-  console.log(dataAlumnos);
-
-  // A la constate data le asigno el valor que tiene en dataAlumnos
-  const [data, setData] = useState(dataAlumnos);
+  // let dataAlumnos = [];
+  // if (alumnos.loading === false) {
+  //   dataAlumnos = alumnos.data.alumnos;
+  //   console.log(dataAlumnos);
+  // }
 
   // Controlan cuando se abren y cierran los modales, Esta en falso para que este cerrado hasta que no se lo diga yo
-  const [modalVer, setModalVer] = React.useState(false);
+  const [modalVer, setModalVer] = useState(false);
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [modalInsertar, setModalInsertar] = useState(false);
@@ -80,7 +82,7 @@ const ListaAlumnos = () => {
 
   //Edita los datos puestos por el Mod y refresca los datos del Modal
   const editar = () => {
-    var dataNueva = data;
+    let dataNueva = data;
     dataNueva.map((alumno) => {
       if (alumno.nroexpediente === AlumnoSeleccionado.nroexpediente) {
         alumno.aniocursado = AlumnoSeleccionado.aniocursado;
@@ -109,7 +111,17 @@ const ListaAlumnos = () => {
 
   //Abre el modal para crear un Perfil de un Alumno y limpia la data del Alumno seleccionado
   const abrirModalInsertar = () => {
-    setAlumnoSeleccionado(null);
+    setAlumnoSeleccionado({
+      nroexpediente: "",
+      nombre: "",
+      apellido: "",
+      aniocursado: "",
+      cuotaaldia: "",
+      domicilio: "",
+      email: "",
+      dni: "",
+      diafechanac: "",
+    });
     setModalInsertar(true);
   };
 
@@ -165,6 +177,14 @@ const ListaAlumnos = () => {
           setModalVer={setModalVer}
         />
       )}
+
+      {/* {alumnos.loading === false && (
+        <TablaAlumnos
+          data={alumnos.data}
+          seleccionarAlumno={seleccionarAlumno}
+          setModalVer={setModalVer}
+        />
+      )} */}
 
       {alumnos.loading === false && (
         <ModalEditar
